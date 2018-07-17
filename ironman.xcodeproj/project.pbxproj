@@ -11,6 +11,7 @@
 		6986BAA920717F36EB58A6CD /* Pods_ironman.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02BFBAFF673E21E626250BE0 /* Pods_ironman.framework */; };
 		FD663A7120FE8A72005E03FF /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD663A7020FE8A72005E03FF /* NavigationController.swift */; };
 		FD663A7320FE8ADA005E03FF /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD663A7220FE8ADA005E03FF /* Colors.swift */; };
+		FD663A7920FE8DD8005E03FF /* CardGameCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD663A7820FE8DD8005E03FF /* CardGameCollectionViewCell.swift */; };
 		FDD7D99520FE887900722BEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD7D99420FE887900722BEB /* AppDelegate.swift */; };
 		FDD7D99720FE887900722BEB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD7D99620FE887900722BEB /* ViewController.swift */; };
 		FDD7D99A20FE887900722BEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDD7D99820FE887900722BEB /* Main.storyboard */; };
@@ -39,6 +40,7 @@
 		DC1C98D654188F2E2F4FE3C3 /* Pods-ironmanTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ironmanTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ironmanTests/Pods-ironmanTests.debug.xcconfig"; sourceTree = "<group>"; };
 		FD663A7020FE8A72005E03FF /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		FD663A7220FE8ADA005E03FF /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		FD663A7820FE8DD8005E03FF /* CardGameCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardGameCollectionViewCell.swift; sourceTree = "<group>"; };
 		FDD7D99120FE887900722BEB /* ironman.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ironman.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDD7D99420FE887900722BEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FDD7D99620FE887900722BEB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 				FDD7D99B20FE887900722BEB /* ironman.xcdatamodeld */,
 				FD663A7020FE8A72005E03FF /* NavigationController.swift */,
 				FD663A7220FE8ADA005E03FF /* Colors.swift */,
+				FD663A7820FE8DD8005E03FF /* CardGameCollectionViewCell.swift */,
 			);
 			path = ironman;
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 				FD663A7320FE8ADA005E03FF /* Colors.swift in Sources */,
 				FD663A7120FE8A72005E03FF /* NavigationController.swift in Sources */,
 				FDD7D99520FE887900722BEB /* AppDelegate.swift in Sources */,
+				FD663A7920FE8DD8005E03FF /* CardGameCollectionViewCell.swift in Sources */,
 				FDD7D99D20FE887900722BEB /* ironman.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
