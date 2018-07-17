@@ -5,25 +5,14 @@ class ConnectionStatusManager: NSObject {
 
   var reachability: Reachability!
 
-  static let sharedInstance: ConnectionStatusManager = { return ConnectionStatusManager() }()
+  static let shared: ConnectionStatusManager = { return ConnectionStatusManager() }()
 
   override init() {
     super.init()
 
     reachability = Reachability()!
-
-    NotificationCenter.default.addObserver(
-      self,
-      selector: #selector(networkStatusChanged(_:)),
-      name: .reachabilityChanged,
-      object: reachability
-    )
-
-    do {
-      try reachability.startNotifier()
-    } catch {
-      print("Unable to start notifier")
-    }
+    NotificationCenter.default.addObserver(self, selector: #selector(networkStatusChanged(_:)), name: .reachabilityChanged, object: reachability)
+    try! reachability.startNotifier()
   }
 
   @objc func networkStatusChanged(_ notification: Notification) {
@@ -38,36 +27,13 @@ class ConnectionStatusManager: NSObject {
     }
   }
 
-  static func stopNotifier() -> Void {
-    do {
-      try (ConnectionStatusManager.sharedInstance.reachability).startNotifier()
-    } catch {
-      print("Error stopping notifier")
-    }
+  static func start() -> Void {
+    try! shared.reachability.startNotifier()
   }
 
-//  static func isReachable(completed: @escaping (ConnectionStatusManager) -> Void) {
-//    if (ConnectionStatusManager.sharedInstance.reachability).connection != .none {
-//      completed(ConnectionStatusManager.sharedInstance)
-//    }
-//  }
-//
-//  static func isUnreachable(completed: @escaping (ConnectionStatusManager) -> Void) {
-//    if (ConnectionStatusManager.sharedInstance.reachability).connection == .none {
-//      completed(ConnectionStatusManager.sharedInstance)
-//    }
-//  }
-//
-//  static func isReachableViaWWAN(completed: @escaping (ConnectionStatusManager) -> Void) {
-//    if (ConnectionStatusManager.sharedInstance.reachability).connection == .cellular {
-//      completed(ConnectionStatusManager.sharedInstance)
-//    }
-//  }
-//
-//  static func isReachableViaWiFi(completed: @escaping (ConnectionStatusManager) -> Void) {
-//    if (ConnectionStatusManager.sharedInstance.reachability).connection == .wifi {
-//      completed(ConnectionStatusManager.sharedInstance)
-//    }
-//  }
+  static func stop() {
+    NotificationCenter.default.removeObserver(self, name: .reachabilityChanged, object: nil)
+    shared.reachability.stopNotifier()
+  }
 }
 
