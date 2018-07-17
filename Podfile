@@ -6,7 +6,7 @@ target 'ironman' do
   use_frameworks!
 
   pod 'Alamofire'
-  pod 'Reachability'
+  pod 'ReachabilitySwift'
   pod 'SDWebImage'
 
   # Pods for ironman

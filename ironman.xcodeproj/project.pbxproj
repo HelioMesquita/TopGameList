@@ -13,6 +13,7 @@
 		FD663A7320FE8ADA005E03FF /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD663A7220FE8ADA005E03FF /* Colors.swift */; };
 		FD663A7920FE8DD8005E03FF /* CardGameCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD663A7820FE8DD8005E03FF /* CardGameCollectionViewCell.swift */; };
 		FD663A7B20FE9AE7005E03FF /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD663A7A20FE9AE7005E03FF /* UIImageView.swift */; };
+		FD663A7D20FE9F5F005E03FF /* ConnectionStatusManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD663A7C20FE9F5F005E03FF /* ConnectionStatusManager.swift */; };
 		FDD7D99520FE887900722BEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD7D99420FE887900722BEB /* AppDelegate.swift */; };
 		FDD7D99720FE887900722BEB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD7D99620FE887900722BEB /* ViewController.swift */; };
 		FDD7D99A20FE887900722BEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDD7D99820FE887900722BEB /* Main.storyboard */; };
@@ -43,6 +44,7 @@
 		FD663A7220FE8ADA005E03FF /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		FD663A7820FE8DD8005E03FF /* CardGameCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardGameCollectionViewCell.swift; sourceTree = "<group>"; };
 		FD663A7A20FE9AE7005E03FF /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
+		FD663A7C20FE9F5F005E03FF /* ConnectionStatusManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionStatusManager.swift; sourceTree = "<group>"; };
 		FDD7D99120FE887900722BEB /* ironman.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ironman.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDD7D99420FE887900722BEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FDD7D99620FE887900722BEB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 				FD663A7220FE8ADA005E03FF /* Colors.swift */,
 				FD663A7820FE8DD8005E03FF /* CardGameCollectionViewCell.swift */,
 				FD663A7A20FE9AE7005E03FF /* UIImageView.swift */,
+				FD663A7C20FE9F5F005E03FF /* ConnectionStatusManager.swift */,
 			);
 			path = ironman;
 			sourceTree = "<group>";
@@ -294,7 +297,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ironman/Pods-ironman-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/Reachability/Reachability.framework",
+				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -340,6 +343,7 @@
 				FDD7D99520FE887900722BEB /* AppDelegate.swift in Sources */,
 				FD663A7920FE8DD8005E03FF /* CardGameCollectionViewCell.swift in Sources */,
 				FDD7D99D20FE887900722BEB /* ironman.xcdatamodeld in Sources */,
+				FD663A7D20FE9F5F005E03FF /* ConnectionStatusManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -501,6 +505,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XJ3PM54JPR;
 				INFOPLIST_FILE = ironman/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -519,6 +524,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XJ3PM54JPR;
 				INFOPLIST_FILE = ironman/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

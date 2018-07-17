@@ -10,6 +10,7 @@ class ViewController: UIViewController {
     super.viewDidLoad()
     view.backgroundColor = UIColor.offwhite
     collectionView.contentInset = UIEdgeInsets(top: margin, left: margin, bottom: 0, right: margin)
+//    ConnectionStatusManager.shared.startMonitoring()
   }
 
 }
