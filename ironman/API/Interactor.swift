@@ -49,6 +49,12 @@ class Interactor<S> where S: Decodable {
     }
   }
 
+  func clearGames() {
+    let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "GameItem")
+    let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+    try! GamesDataBaseManager.context.execute(deleteRequest)
+  }
+
   func retrieveGames() -> [Game] {
     let fetchRequest: NSFetchRequest<GameItem> = GameItem.fetchRequest()
     let gameDBList = try! GamesDataBaseManager.context.fetch(fetchRequest)
