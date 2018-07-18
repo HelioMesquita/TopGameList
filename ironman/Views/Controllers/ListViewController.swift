@@ -1,22 +1,34 @@
 import UIKit
 
-class ViewController: UIViewController {
-
-  private let margin: CGFloat = 16
-  var gameList: GameList?
+class ListViewController: UIViewController {
 
   @IBOutlet weak var collectionView: UICollectionView!
+  
+  private let margin: CGFloat = 16
+  var gameList: GameList?
 
   override func viewDidLoad() {
     super.viewDidLoad()
     view.backgroundColor = UIColor.offwhite
-    collectionView.contentInset = UIEdgeInsets(top: margin, left: margin, bottom: margin, right: margin)
+    setRefresher()
+  }
 
+  func setRefresher() {
+    let refreshControl = UIRefreshControl()
+    refreshControl.tintColor = UIColor.philippineYellow
+    refreshControl.addTarget(self, action: #selector(load), for: .valueChanged)
+
+    collectionView.refreshControl = refreshControl
+    collectionView.alwaysBounceVertical = true
+  }
+
+  @objc func load() {
     Interactor<GameList>(urlConfig: URLConfig()).execute(onSuccess: { (gameList) in
+      self.collectionView.refreshControl?.endRefreshing()
       self.gameList = gameList
       self.collectionView.reloadData()
     }, onError: {
-
+      self.collectionView.refreshControl?.endRefreshing()
     })
   }
 
@@ -30,7 +42,7 @@ class ViewController: UIViewController {
   }
 }
 
-extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension ListViewController: UICollectionViewDelegate, UICollectionViewDataSource {
 
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     guard let total = gameList?.top.count else {
@@ -45,9 +57,20 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     return cell
   }
 
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    performSegue(withIdentifier: "showDetail", sender: indexPath.row)
+  }
+
+  func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+    
+  }
+}
+
+extension ListViewController: UICollectionViewDelegateFlowLayout {
+
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
-    let width = (collectionView.frame.width - 3*margin) / 2
+    let width = (collectionView.bounds.width - margin) / 2
     let height = width*1.2
 
     return CGSize(width: width, height: height)
@@ -59,9 +82,5 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
 
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
     return margin
-  }
-
-  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    performSegue(withIdentifier: "showDetail", sender: indexPath.row)
   }
 }

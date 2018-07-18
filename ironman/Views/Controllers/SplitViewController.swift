@@ -1,6 +1,6 @@
 import UIKit
 
-class PrimarySplitViewController: UISplitViewController, UISplitViewControllerDelegate {
+class SplitViewController: UISplitViewController, UISplitViewControllerDelegate {
 
   override func viewDidLoad() {
     super.viewDidLoad()

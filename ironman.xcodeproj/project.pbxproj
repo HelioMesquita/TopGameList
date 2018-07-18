@@ -24,10 +24,10 @@
 		FD663A9620FEC531005E03FF /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD663A9520FEC531005E03FF /* Interactor.swift */; };
 		FD663A9820FEC5E4005E03FF /* URLConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD663A9720FEC5E4005E03FF /* URLConfig.swift */; };
 		FD663A9A20FECAE3005E03FF /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD663A9920FECAE3005E03FF /* Bundle.swift */; };
-		FD663A9E20FED3B3005E03FF /* PrimarySplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD663A9D20FED3B3005E03FF /* PrimarySplitViewController.swift */; };
+		FD663A9E20FED3B3005E03FF /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD663A9D20FED3B3005E03FF /* SplitViewController.swift */; };
 		FD663AA020FED630005E03FF /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD663A9F20FED630005E03FF /* DetailViewController.swift */; };
 		FDD7D99520FE887900722BEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD7D99420FE887900722BEB /* AppDelegate.swift */; };
-		FDD7D99720FE887900722BEB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD7D99620FE887900722BEB /* ViewController.swift */; };
+		FDD7D99720FE887900722BEB /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD7D99620FE887900722BEB /* ListViewController.swift */; };
 		FDD7D99A20FE887900722BEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDD7D99820FE887900722BEB /* Main.storyboard */; };
 		FDD7D99D20FE887900722BEB /* ironman.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FDD7D99B20FE887900722BEB /* ironman.xcdatamodeld */; };
 		FDD7D99F20FE887B00722BEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDD7D99E20FE887B00722BEB /* Assets.xcassets */; };
@@ -67,11 +67,11 @@
 		FD663A9520FEC531005E03FF /* Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interactor.swift; sourceTree = "<group>"; };
 		FD663A9720FEC5E4005E03FF /* URLConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLConfig.swift; sourceTree = "<group>"; };
 		FD663A9920FECAE3005E03FF /* Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
-		FD663A9D20FED3B3005E03FF /* PrimarySplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimarySplitViewController.swift; sourceTree = "<group>"; };
+		FD663A9D20FED3B3005E03FF /* SplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
 		FD663A9F20FED630005E03FF /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		FDD7D99120FE887900722BEB /* ironman.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ironman.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDD7D99420FE887900722BEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FDD7D99620FE887900722BEB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FDD7D99620FE887900722BEB /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		FDD7D99920FE887900722BEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FDD7D99C20FE887900722BEB /* ironman.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ironman.xcdatamodel; sourceTree = "<group>"; };
 		FDD7D99E20FE887B00722BEB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -202,8 +202,8 @@
 		FD663A9C20FED307005E03FF /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				FD663A9D20FED3B3005E03FF /* PrimarySplitViewController.swift */,
-				FDD7D99620FE887900722BEB /* ViewController.swift */,
+				FD663A9D20FED3B3005E03FF /* SplitViewController.swift */,
+				FDD7D99620FE887900722BEB /* ListViewController.swift */,
 				FD663A7020FE8A72005E03FF /* NavigationController.swift */,
 				FD663A9F20FED630005E03FF /* DetailViewController.swift */,
 			);
@@ -446,7 +446,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FDD7D99720FE887900722BEB /* ViewController.swift in Sources */,
+				FDD7D99720FE887900722BEB /* ListViewController.swift in Sources */,
 				FD663A9A20FECAE3005E03FF /* Bundle.swift in Sources */,
 				FD663A7320FE8ADA005E03FF /* Colors.swift in Sources */,
 				FD663A7F20FEAC4D005E03FF /* Notification.swift in Sources */,
@@ -455,7 +455,7 @@
 				FD663A7B20FE9AE7005E03FF /* UIImageView.swift in Sources */,
 				FD663AA020FED630005E03FF /* DetailViewController.swift in Sources */,
 				FD663A8120FEB3A6005E03FF /* ConnectionStatusAlert.swift in Sources */,
-				FD663A9E20FED3B3005E03FF /* PrimarySplitViewController.swift in Sources */,
+				FD663A9E20FED3B3005E03FF /* SplitViewController.swift in Sources */,
 				FD663A8D20FEC2F4005E03FF /* Links.swift in Sources */,
 				FD663A7120FE8A72005E03FF /* NavigationController.swift in Sources */,
 				FDD7D99520FE887900722BEB /* AppDelegate.swift in Sources */,
