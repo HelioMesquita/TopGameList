@@ -175,10 +175,10 @@
 			isa = PBXGroup;
 			children = (
 				FD663A8220FEBB8A005E03FF /* ConnectionStatus */,
-				FD663A8320FEBBA0005E03FF /* Helpers */,
-				FD663A8520FEBBAB005E03FF /* Storyboard */,
-				FD663A8620FEBBB2005E03FF /* SupportingFiles */,
 				FD663A8420FEBBA5005E03FF /* Views */,
+				FD663A8520FEBBAB005E03FF /* Storyboard */,
+				FD663A8320FEBBA0005E03FF /* Helpers */,
+				FD663A8620FEBBB2005E03FF /* SupportingFiles */,
 			);
 			path = ironman;
 			sourceTree = "<group>";
