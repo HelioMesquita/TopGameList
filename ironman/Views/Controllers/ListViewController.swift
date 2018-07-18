@@ -4,7 +4,6 @@ class ListViewController: UIViewController {
 
   @IBOutlet weak var collectionView: UICollectionView!
   
-  private let margin: CGFloat = 16
   var gameList = GameList()
   var presenter: ListPresenter?
   let urlQueryParams = URLQueryItem(name: "client_id", value: Bundle.main.getID())
@@ -15,11 +14,12 @@ class ListViewController: UIViewController {
     let urlConfig = URLConfig(url: Bundle.main.getEntrypoint(), queryParams: [urlQueryParams])
     let interactor = Interactor<GameList>(urlConfig: urlConfig)
     presenter = ListPresenter(interactor: interactor, delegate: self)
-    presenter?.present()
+    presenter?.performLoadData()
+//    presenter?.performRequest()
   }
 
   @objc func reload() {
-    presenter?.present()
+//    presenter?.performRequest()
   }
 
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -68,7 +68,7 @@ extension ListViewController: ListPresentable {
   func prepareToLoadNextPage(url: URL) {
     let urlConfig = URLConfig(url: url, queryParams: [urlQueryParams])
     let interactor = Interactor<GameList>(urlConfig: urlConfig)
-    presenter?.presentNextPage(interactor: interactor)
+    presenter?.presentNextPage(nextInteractor: interactor)
   }
 
   func onError(error: RequestError) {
@@ -102,6 +102,7 @@ extension ListViewController: UICollectionViewDelegateFlowLayout {
 
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
+    let margin: CGFloat = 16
     let width = (collectionView.bounds.width - margin) / 2
     let height = width*1.2
 
