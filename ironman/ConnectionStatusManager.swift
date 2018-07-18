@@ -1,4 +1,4 @@
-import Foundation
+ import Foundation
 import Reachability
 
 class ConnectionStatusManager: NSObject {
@@ -18,12 +18,10 @@ class ConnectionStatusManager: NSObject {
   @objc func networkStatusChanged(_ notification: Notification) {
     let reachability = notification.object as! Reachability
     switch reachability.connection {
-    case .cellular:
-      debugPrint("Network reachable through Cellular Data")
+    case .cellular, .wifi:
+      ConnectionStatusAlert.hide()
     case .none:
-      debugPrint("Network became unreachable")
-    case .wifi:
-      debugPrint("Network reachable through WiFi")
+      ConnectionStatusAlert.show()
     }
   }
 

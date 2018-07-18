@@ -8,6 +8,7 @@ target 'ironman' do
   pod 'Alamofire'
   pod 'ReachabilitySwift'
   pod 'SDWebImage'
+  pod 'Whisper'
 
   # Pods for ironman
 
