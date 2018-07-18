@@ -16,6 +16,11 @@
 		FD663A7D20FE9F5F005E03FF /* ConnectionStatusManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD663A7C20FE9F5F005E03FF /* ConnectionStatusManager.swift */; };
 		FD663A7F20FEAC4D005E03FF /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD663A7E20FEAC4D005E03FF /* Notification.swift */; };
 		FD663A8120FEB3A6005E03FF /* ConnectionStatusAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD663A8020FEB3A6005E03FF /* ConnectionStatusAlert.swift */; };
+		FD663A8920FEC2D0005E03FF /* GameList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD663A8820FEC2D0005E03FF /* GameList.swift */; };
+		FD663A8D20FEC2F4005E03FF /* Links.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD663A8C20FEC2F4005E03FF /* Links.swift */; };
+		FD663A8F20FEC2F5005E03FF /* Top.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD663A8E20FEC2F5005E03FF /* Top.swift */; };
+		FD663A9120FEC30B005E03FF /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD663A9020FEC30B005E03FF /* Game.swift */; };
+		FD663A9320FEC368005E03FF /* ImageLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD663A9220FEC368005E03FF /* ImageLinks.swift */; };
 		FDD7D99520FE887900722BEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD7D99420FE887900722BEB /* AppDelegate.swift */; };
 		FDD7D99720FE887900722BEB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD7D99620FE887900722BEB /* ViewController.swift */; };
 		FDD7D99A20FE887900722BEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDD7D99820FE887900722BEB /* Main.storyboard */; };
@@ -49,6 +54,11 @@
 		FD663A7C20FE9F5F005E03FF /* ConnectionStatusManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionStatusManager.swift; sourceTree = "<group>"; };
 		FD663A7E20FEAC4D005E03FF /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		FD663A8020FEB3A6005E03FF /* ConnectionStatusAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionStatusAlert.swift; sourceTree = "<group>"; };
+		FD663A8820FEC2D0005E03FF /* GameList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameList.swift; sourceTree = "<group>"; };
+		FD663A8C20FEC2F4005E03FF /* Links.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Links.swift; sourceTree = "<group>"; };
+		FD663A8E20FEC2F5005E03FF /* Top.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Top.swift; sourceTree = "<group>"; };
+		FD663A9020FEC30B005E03FF /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		FD663A9220FEC368005E03FF /* ImageLinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLinks.swift; sourceTree = "<group>"; };
 		FDD7D99120FE887900722BEB /* ironman.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ironman.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDD7D99420FE887900722BEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FDD7D99620FE887900722BEB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -151,6 +161,18 @@
 			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
+		FD663A8720FEC2C6005E03FF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FD663A9020FEC30B005E03FF /* Game.swift */,
+				FD663A9220FEC368005E03FF /* ImageLinks.swift */,
+				FD663A8E20FEC2F5005E03FF /* Top.swift */,
+				FD663A8C20FEC2F4005E03FF /* Links.swift */,
+				FD663A8820FEC2D0005E03FF /* GameList.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		FDD7D98820FE887900722BEB = {
 			isa = PBXGroup;
 			children = (
@@ -174,6 +196,7 @@
 		FDD7D99320FE887900722BEB /* ironman */ = {
 			isa = PBXGroup;
 			children = (
+				FD663A8720FEC2C6005E03FF /* Models */,
 				FD663A8220FEBB8A005E03FF /* ConnectionStatus */,
 				FD663A8420FEBBA5005E03FF /* Views */,
 				FD663A8520FEBBAB005E03FF /* Storyboard */,
@@ -387,12 +410,17 @@
 				FDD7D99720FE887900722BEB /* ViewController.swift in Sources */,
 				FD663A7320FE8ADA005E03FF /* Colors.swift in Sources */,
 				FD663A7F20FEAC4D005E03FF /* Notification.swift in Sources */,
+				FD663A9320FEC368005E03FF /* ImageLinks.swift in Sources */,
+				FD663A9120FEC30B005E03FF /* Game.swift in Sources */,
 				FD663A7B20FE9AE7005E03FF /* UIImageView.swift in Sources */,
 				FD663A8120FEB3A6005E03FF /* ConnectionStatusAlert.swift in Sources */,
+				FD663A8D20FEC2F4005E03FF /* Links.swift in Sources */,
 				FD663A7120FE8A72005E03FF /* NavigationController.swift in Sources */,
 				FDD7D99520FE887900722BEB /* AppDelegate.swift in Sources */,
+				FD663A8F20FEC2F5005E03FF /* Top.swift in Sources */,
 				FD663A7920FE8DD8005E03FF /* CardGameCollectionViewCell.swift in Sources */,
 				FDD7D99D20FE887900722BEB /* ironman.xcdatamodeld in Sources */,
+				FD663A8920FEC2D0005E03FF /* GameList.swift in Sources */,
 				FD663A7D20FE9F5F005E03FF /* ConnectionStatusManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
