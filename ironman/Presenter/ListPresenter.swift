@@ -25,6 +25,7 @@ class ListPresenter {
   func present() {
     delegate?.startLoading()
     interactor?.execute(onSuccess: { gameList in
+      
       self.delegate?.onLoad(list: gameList)
       self.delegate?.endLoading()
     }, onError: { error in

@@ -1,23 +1,21 @@
 import Foundation
 
 struct Game: Decodable {
-  let name: String
-  let popularity: Double
-  let id: Double
-  let giantbombID: Double
-  let box: ImageLinks
-  let logo: ImageLinks
-  let localizedName: String
-  let locale: String
+  private let info: GameInfo
+  let viewers: Int
+  let channels: Int
+
+  var name: String {
+    return info.name
+  }
+
+  var imageUrl: URL {
+    return info.box.large
+  }
 
   enum CodingKeys: String, CodingKey {
-    case name = "name"
-    case popularity = "popularity"
-    case id = "_id"
-    case giantbombID = "giantbomb_id"
-    case box = "box"
-    case logo = "logo"
-    case localizedName = "localized_name"
-    case locale = "locale"
+    case info = "game"
+    case viewers
+    case channels
   }
 }

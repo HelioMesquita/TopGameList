@@ -1,4 +1,5 @@
 import Alamofire
+import CoreData
 import Foundation
 
 class Interactor<S> where S: Decodable {
@@ -36,4 +37,27 @@ class Interactor<S> where S: Decodable {
       }
     }
   }
+
+//  func saveTopGames(list: [Top]) {
+//    for item in list {
+//      let gameItem = GameItem(context: GamesDataBaseManager.context)
+//      
+////      gameItem.name = item.game.name
+////      gameItem.imageLink = item.game.box.large.absoluteString
+//      GamesDataBaseManager.saveContext()
+//    }
+//  }
+//
+//  func getTopGames() -> [Top] {
+//    let fetchRequest: NSFetchRequest<GameItem> = GameItem.fetchRequest()
+//    let gameList = try! GamesDataBaseManager.context.fetch(fetchRequest)
+//
+//    var list:[Top] = []
+//
+////    for game in gameList {
+////      list.append(Top(game: Game(name: game.name!, popularity: nil, id: nil, giantbombID: nil, box: ImageLinks(large: URL(string: game.imageLink!)!, medium: nil, small: nil), logo: nil, localizedName: nil, locale: nil), viewers: nil, channels: nil))
+////    }
+//
+//    return list
+//  }
 }

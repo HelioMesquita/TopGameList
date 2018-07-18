@@ -26,9 +26,9 @@ class ListViewController: UIViewController {
     let row = sender as! Int
     let nav = segue.destination as! NavigationController
     let viewController = nav.visibleViewController as! DetailViewController
-    let top = gameList?.top[row]
-    viewController.top = top
-    viewController.navigationItem.title = top?.game.name
+    let game = gameList?.list[row]
+    viewController.game = game
+    viewController.navigationItem.title = game?.name
   }
 }
 
@@ -80,7 +80,7 @@ extension ListViewController: ListPresentable {
 extension ListViewController: UICollectionViewDelegate, UICollectionViewDataSource {
 
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    guard let total = gameList?.top.count else {
+    guard let total = gameList?.list.count else {
       return 0
     }
     return total
@@ -88,7 +88,7 @@ extension ListViewController: UICollectionViewDelegate, UICollectionViewDataSour
 
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CardGameCollectionViewCell
-    cell.setCell(top: gameList?.top[indexPath.row])
+    cell.setCell(game: gameList?.list[indexPath.row])
     return cell
   }
 
@@ -97,7 +97,7 @@ extension ListViewController: UICollectionViewDelegate, UICollectionViewDataSour
   }
 
   func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-    presenter?.handleInfinitScroll(actualRow: indexPath.row, totalRows: gameList?.top.count, nextLink: gameList?.links?.next)
+    presenter?.handleInfinitScroll(actualRow: indexPath.row, totalRows: gameList?.list.count, nextLink: gameList?.links?.next)
   }
 }
 
@@ -111,11 +111,4 @@ extension ListViewController: UICollectionViewDelegateFlowLayout {
     return CGSize(width: width, height: height)
   }
 
-  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-    return margin
-  }
-
-  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-    return margin
-  }
 }

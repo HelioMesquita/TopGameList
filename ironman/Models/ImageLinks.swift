@@ -1,7 +1,5 @@
 import Foundation
 
-struct ImageLinks: Decodable {
+struct ImageLink: Decodable {
   let large: URL
-  let medium: URL
-  let small: URL
 }

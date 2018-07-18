@@ -8,7 +8,7 @@ class DetailViewController: UIViewController {
   @IBOutlet weak var viewersLabel: UILabel!
   @IBOutlet weak var noDetailsLabel: UILabel!
 
-  var top: Top?
+  var game: Game?
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -17,12 +17,12 @@ class DetailViewController: UIViewController {
   }
 
   func setView() {
-    if let top = top {
+    if let game = game {
       noDetailsLabel.isHidden = true
-      nameLabel.text = top.game.name
-      imageView.setImageFrom(url: top.game.box.large, onSuccess: {})
-      channelLabel.text = String(top.channels)
-      viewersLabel.text = String(top.viewers)
+      nameLabel.text = game.name
+      imageView.setImageFrom(url: game.imageUrl, onSuccess: {})
+      channelLabel.text = String(game.channels)
+      viewersLabel.text = String(game.viewers)
     } else {
       noDetailsLabel.isHidden = false
       noDetailsLabel.backgroundColor = UIColor.offwhite

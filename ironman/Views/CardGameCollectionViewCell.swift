@@ -16,9 +16,9 @@ class CardGameCollectionViewCell: UICollectionViewCell {
     imageView.clipsToBounds = true
   }
 
-  func setCell(top: Top?) {
-    titleLabel.text = top?.game.name
-    imageView.setImageFrom(url: top?.game.box.large) { [weak self] in
+  func setCell(game: Game?) {
+    titleLabel.text = game?.name
+    imageView.setImageFrom(url: game?.imageUrl) { [weak self] in
       self?.titleLabel.textColor = UIColor.white
     }
   }
