@@ -5,7 +5,7 @@ class ListViewController: UIViewController {
   @IBOutlet weak var collectionView: UICollectionView!
   
   private let margin: CGFloat = 16
-  var gameList: GameList?
+  var gameList = GameList()
   var presenter: ListPresenter?
   let urlQueryParams = URLQueryItem(name: "client_id", value: Bundle.main.getID())
 
@@ -26,9 +26,9 @@ class ListViewController: UIViewController {
     let row = sender as! Int
     let nav = segue.destination as! NavigationController
     let viewController = nav.visibleViewController as! DetailViewController
-    let game = gameList?.list[row]
+    let game = gameList.list[row]
     viewController.game = game
-    viewController.navigationItem.title = game?.name
+    viewController.navigationItem.title = game.name
   }
 }
 
@@ -59,7 +59,7 @@ extension ListViewController: ListPresentable {
   }
 
   func onPaginate(list: GameList) {
-    self.gameList = gameList?.update(newlist: list)
+    self.gameList = gameList.update(newlist: list)
     DispatchQueue.main.async {
       self.collectionView.reloadData()
     }
@@ -80,15 +80,12 @@ extension ListViewController: ListPresentable {
 extension ListViewController: UICollectionViewDelegate, UICollectionViewDataSource {
 
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    guard let total = gameList?.list.count else {
-      return 0
-    }
-    return total
+    return gameList.list.count
   }
 
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CardGameCollectionViewCell
-    cell.setCell(game: gameList?.list[indexPath.row])
+    cell.setCell(game: gameList.list[indexPath.row])
     return cell
   }
 
@@ -97,7 +94,7 @@ extension ListViewController: UICollectionViewDelegate, UICollectionViewDataSour
   }
 
   func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-    presenter?.handleInfinitScroll(actualRow: indexPath.row, totalRows: gameList?.list.count, nextLink: gameList?.links?.next)
+    presenter?.handleInfinitScroll(actualRow: indexPath.row, totalRows: gameList.list.count, nextLink: gameList.links?.next)
   }
 }
 
@@ -110,5 +107,4 @@ extension ListViewController: UICollectionViewDelegateFlowLayout {
 
     return CGSize(width: width, height: height)
   }
-
 }

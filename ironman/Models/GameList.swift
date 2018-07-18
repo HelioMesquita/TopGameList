@@ -2,7 +2,7 @@ import Foundation
 
 struct GameList: Decodable {
   var links: Links?
-  var list: [Game]
+  var list: [Game] = []
 
   enum CodingKeys: String, CodingKey {
     case links = "_links"
