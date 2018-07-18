@@ -10,17 +10,29 @@ class Interactor<S> where S: Decodable {
     self.urlConfig = urlConfig
   }
 
-  func execute(onSuccess: @escaping (Model) -> Void, onError: @escaping () -> Void) {
+  func execute(onSuccess: @escaping (Model) -> Void, onError: @escaping (RequestError) -> Void) {
+    if !ConnectionStatusManager.hasConnection() {
+      onError(RequestError(error: "No Connection", status: 0, message: "Please, check network connection"))
+      return
+    }
+
     Alamofire.request(urlConfig.toURLComponents()).responseJSON { (dataResponse) in
-      if let data = dataResponse.data, dataResponse.result.isSuccess {
-        do {
-          let model = try JSONDecoder().decode(Model.self, from: data)
+
+      guard let data = dataResponse.data else {
+        onError(RequestError(error: "Missing Data", status: 0, message: "Try again later"))
+        return
+      }
+
+      do {
+        if let model = try? JSONDecoder().decode(Model.self, from: data) {
           onSuccess(model)
-        } catch {
-          onError()
+        } else if let error = try? JSONDecoder().decode(RequestError.self, from: data) {
+          onError(error)
+        } else {
+          throw RequestError(error: "Impossible to reach the error", status: 0, message: "Try again later")
         }
-      }  else {
-        onError()
+      } catch {
+        onError(error as! RequestError)
       }
     }
   }

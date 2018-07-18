@@ -4,7 +4,7 @@ protocol ListPresentable: class {
   func onLoad(list: GameList)
   func onPaginate(list: GameList)
   func prepareToLoadNextPage(url: URL)
-  func onError()
+  func onError(error: RequestError)
   func setRefresher()
   func startLoading()
   func endLoading()
@@ -27,8 +27,8 @@ class ListPresenter {
     interactor?.execute(onSuccess: { gameList in
       self.delegate?.onLoad(list: gameList)
       self.delegate?.endLoading()
-    }, onError: {
-      self.delegate?.onError()
+    }, onError: { error in
+      self.delegate?.onError(error: error)
       self.delegate?.endLoading()
     })
   }
@@ -44,8 +44,8 @@ class ListPresenter {
     interactor?.execute(onSuccess: { gameList in
       self.delegate?.onPaginate(list: gameList)
       self.delegate?.endLoading()
-    }, onError: {
-      self.delegate?.onError()
+    }, onError: { error in
+      self.delegate?.onError(error: error)
       self.delegate?.endLoading()
     })
   }

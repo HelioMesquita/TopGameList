@@ -25,6 +25,10 @@ class ConnectionStatusManager: NSObject {
     }
   }
 
+  static func hasConnection() -> Bool {
+    return shared.reachability.connection != .none
+  }
+
   static func start() -> Void {
     try! shared.reachability.startNotifier()
   }

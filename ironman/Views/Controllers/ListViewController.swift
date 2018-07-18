@@ -71,8 +71,9 @@ extension ListViewController: ListPresentable {
     presenter?.presentNextPage(interactor: interactor)
   }
 
-  func onError() {
-
+  func onError(error: RequestError) {
+    let alertController = UIAlertController(title: error.error, message: error.message, preferredStyle: .alert)
+    present(alertController, animated: true, completion: nil)
   }
 }
 

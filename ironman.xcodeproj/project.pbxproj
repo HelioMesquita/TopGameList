@@ -27,6 +27,7 @@
 		FD663A9E20FED3B3005E03FF /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD663A9D20FED3B3005E03FF /* SplitViewController.swift */; };
 		FD663AA020FED630005E03FF /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD663A9F20FED630005E03FF /* DetailViewController.swift */; };
 		FD663AA220FFDA8A005E03FF /* ListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD663AA120FFDA8A005E03FF /* ListPresenter.swift */; };
+		FD663AA620FFE694005E03FF /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD663AA520FFE694005E03FF /* RequestError.swift */; };
 		FDD7D99520FE887900722BEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD7D99420FE887900722BEB /* AppDelegate.swift */; };
 		FDD7D99720FE887900722BEB /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD7D99620FE887900722BEB /* ListViewController.swift */; };
 		FDD7D99A20FE887900722BEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDD7D99820FE887900722BEB /* Main.storyboard */; };
@@ -71,6 +72,7 @@
 		FD663A9D20FED3B3005E03FF /* SplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
 		FD663A9F20FED630005E03FF /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		FD663AA120FFDA8A005E03FF /* ListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPresenter.swift; sourceTree = "<group>"; };
+		FD663AA520FFE694005E03FF /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
 		FDD7D99120FE887900722BEB /* ironman.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ironman.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDD7D99420FE887900722BEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FDD7D99620FE887900722BEB /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 				FD663A8E20FEC2F5005E03FF /* Top.swift */,
 				FD663A8C20FEC2F4005E03FF /* Links.swift */,
 				FD663A8820FEC2D0005E03FF /* GameList.swift */,
+				FD663AA520FFE694005E03FF /* RequestError.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -466,6 +469,7 @@
 				FD663A8F20FEC2F5005E03FF /* Top.swift in Sources */,
 				FD663A7920FE8DD8005E03FF /* CardGameCollectionViewCell.swift in Sources */,
 				FDD7D99D20FE887900722BEB /* ironman.xcdatamodeld in Sources */,
+				FD663AA620FFE694005E03FF /* RequestError.swift in Sources */,
 				FD663A8920FEC2D0005E03FF /* GameList.swift in Sources */,
 				FD663A9620FEC531005E03FF /* Interactor.swift in Sources */,
 				FD663A9820FEC5E4005E03FF /* URLConfig.swift in Sources */,
