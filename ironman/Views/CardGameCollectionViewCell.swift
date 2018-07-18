@@ -11,14 +11,14 @@ class CardGameCollectionViewCell: UICollectionViewCell {
     titleLabel.textColor = UIColor.black
     clipsToBounds = true
 
-    layer.cornerRadius = 8
+    layer.cornerRadius = 10
     layer.shadowColor = UIColor.black.cgColor
     layer.shadowOffset = CGSize(width: 0, height: 8)
     layer.shadowOpacity = 0.08
     layer.shadowRadius = 8
     layer.masksToBounds = false
 
-    imageView.layer.cornerRadius = 8
+    imageView.layer.cornerRadius = 10
     imageView.clipsToBounds = true
   }
 

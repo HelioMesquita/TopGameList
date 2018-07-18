@@ -102,6 +102,55 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		FD663A8220FEBB8A005E03FF /* ConnectionStatus */ = {
+			isa = PBXGroup;
+			children = (
+				FD663A7C20FE9F5F005E03FF /* ConnectionStatusManager.swift */,
+				FD663A8020FEB3A6005E03FF /* ConnectionStatusAlert.swift */,
+			);
+			path = ConnectionStatus;
+			sourceTree = "<group>";
+		};
+		FD663A8320FEBBA0005E03FF /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				FD663A7220FE8ADA005E03FF /* Colors.swift */,
+				FD663A7A20FE9AE7005E03FF /* UIImageView.swift */,
+				FD663A7E20FEAC4D005E03FF /* Notification.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		FD663A8420FEBBA5005E03FF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FDD7D99620FE887900722BEB /* ViewController.swift */,
+				FD663A7820FE8DD8005E03FF /* CardGameCollectionViewCell.swift */,
+				FD663A7020FE8A72005E03FF /* NavigationController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FD663A8520FEBBAB005E03FF /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				FDD7D99820FE887900722BEB /* Main.storyboard */,
+				FDD7D9A020FE887B00722BEB /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		FD663A8620FEBBB2005E03FF /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				FDD7D99E20FE887B00722BEB /* Assets.xcassets */,
+				FDD7D9A320FE887B00722BEB /* Info.plist */,
+				FDD7D99B20FE887900722BEB /* ironman.xcdatamodeld */,
+				FDD7D99420FE887900722BEB /* AppDelegate.swift */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
 		FDD7D98820FE887900722BEB = {
 			isa = PBXGroup;
 			children = (
@@ -125,20 +174,11 @@
 		FDD7D99320FE887900722BEB /* ironman */ = {
 			isa = PBXGroup;
 			children = (
-				FDD7D99420FE887900722BEB /* AppDelegate.swift */,
-				FDD7D99620FE887900722BEB /* ViewController.swift */,
-				FDD7D99820FE887900722BEB /* Main.storyboard */,
-				FDD7D99E20FE887B00722BEB /* Assets.xcassets */,
-				FDD7D9A020FE887B00722BEB /* LaunchScreen.storyboard */,
-				FDD7D9A320FE887B00722BEB /* Info.plist */,
-				FDD7D99B20FE887900722BEB /* ironman.xcdatamodeld */,
-				FD663A7020FE8A72005E03FF /* NavigationController.swift */,
-				FD663A7220FE8ADA005E03FF /* Colors.swift */,
-				FD663A7820FE8DD8005E03FF /* CardGameCollectionViewCell.swift */,
-				FD663A7A20FE9AE7005E03FF /* UIImageView.swift */,
-				FD663A7C20FE9F5F005E03FF /* ConnectionStatusManager.swift */,
-				FD663A7E20FEAC4D005E03FF /* Notification.swift */,
-				FD663A8020FEB3A6005E03FF /* ConnectionStatusAlert.swift */,
+				FD663A8220FEBB8A005E03FF /* ConnectionStatus */,
+				FD663A8320FEBBA0005E03FF /* Helpers */,
+				FD663A8520FEBBAB005E03FF /* Storyboard */,
+				FD663A8620FEBBB2005E03FF /* SupportingFiles */,
+				FD663A8420FEBBA5005E03FF /* Views */,
 			);
 			path = ironman;
 			sourceTree = "<group>";
@@ -516,7 +556,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XJ3PM54JPR;
-				INFOPLIST_FILE = ironman/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/ironman/SupportingFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -535,7 +575,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XJ3PM54JPR;
-				INFOPLIST_FILE = ironman/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/ironman/SupportingFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

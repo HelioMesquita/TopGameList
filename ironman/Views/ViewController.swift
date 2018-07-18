@@ -12,11 +12,6 @@ class ViewController: UIViewController {
     collectionView.contentInset = UIEdgeInsets(top: margin, left: margin, bottom: 0, right: margin)
   }
 
-  override func viewWillAppear(_ animated: Bool) {
-    super.viewWillAppear(true)
-    
-  }
-
 }
 
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {

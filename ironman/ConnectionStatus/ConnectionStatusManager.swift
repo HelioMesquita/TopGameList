@@ -1,4 +1,4 @@
- import Foundation
+import Foundation
 import Reachability
 
 class ConnectionStatusManager: NSObject {
