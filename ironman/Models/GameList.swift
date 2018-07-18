@@ -1,9 +1,9 @@
 import Foundation
 
 struct GameList: Decodable {
-  let total: Int
+  let total: Int = 0
   let links: Links?
-  let top = [Top]()
+  let top: [Top]
 
   enum CodingKeys: String, CodingKey {
     case total = "_total"

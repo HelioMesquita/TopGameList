@@ -1,10 +1,10 @@
 import Foundation
 
 struct Game: Decodable {
-  let next: URL
-  let popularity: Int
-  let id: Int
-  let giantbombID: Int
+  let name: String
+  let popularity: Double
+  let id: Double
+  let giantbombID: Double
   let box: ImageLinks
   let logo: ImageLinks
   let localizedName: String

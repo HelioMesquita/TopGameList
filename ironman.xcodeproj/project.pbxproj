@@ -21,6 +21,11 @@
 		FD663A8F20FEC2F5005E03FF /* Top.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD663A8E20FEC2F5005E03FF /* Top.swift */; };
 		FD663A9120FEC30B005E03FF /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD663A9020FEC30B005E03FF /* Game.swift */; };
 		FD663A9320FEC368005E03FF /* ImageLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD663A9220FEC368005E03FF /* ImageLinks.swift */; };
+		FD663A9620FEC531005E03FF /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD663A9520FEC531005E03FF /* Interactor.swift */; };
+		FD663A9820FEC5E4005E03FF /* URLConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD663A9720FEC5E4005E03FF /* URLConfig.swift */; };
+		FD663A9A20FECAE3005E03FF /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD663A9920FECAE3005E03FF /* Bundle.swift */; };
+		FD663A9E20FED3B3005E03FF /* PrimarySplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD663A9D20FED3B3005E03FF /* PrimarySplitViewController.swift */; };
+		FD663AA020FED630005E03FF /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD663A9F20FED630005E03FF /* DetailViewController.swift */; };
 		FDD7D99520FE887900722BEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD7D99420FE887900722BEB /* AppDelegate.swift */; };
 		FDD7D99720FE887900722BEB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD7D99620FE887900722BEB /* ViewController.swift */; };
 		FDD7D99A20FE887900722BEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDD7D99820FE887900722BEB /* Main.storyboard */; };
@@ -59,6 +64,11 @@
 		FD663A8E20FEC2F5005E03FF /* Top.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Top.swift; sourceTree = "<group>"; };
 		FD663A9020FEC30B005E03FF /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		FD663A9220FEC368005E03FF /* ImageLinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLinks.swift; sourceTree = "<group>"; };
+		FD663A9520FEC531005E03FF /* Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interactor.swift; sourceTree = "<group>"; };
+		FD663A9720FEC5E4005E03FF /* URLConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLConfig.swift; sourceTree = "<group>"; };
+		FD663A9920FECAE3005E03FF /* Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
+		FD663A9D20FED3B3005E03FF /* PrimarySplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimarySplitViewController.swift; sourceTree = "<group>"; };
+		FD663A9F20FED630005E03FF /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		FDD7D99120FE887900722BEB /* ironman.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ironman.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDD7D99420FE887900722BEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FDD7D99620FE887900722BEB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -127,6 +137,7 @@
 				FD663A7220FE8ADA005E03FF /* Colors.swift */,
 				FD663A7A20FE9AE7005E03FF /* UIImageView.swift */,
 				FD663A7E20FEAC4D005E03FF /* Notification.swift */,
+				FD663A9920FECAE3005E03FF /* Bundle.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -134,9 +145,8 @@
 		FD663A8420FEBBA5005E03FF /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				FDD7D99620FE887900722BEB /* ViewController.swift */,
+				FD663A9C20FED307005E03FF /* Controllers */,
 				FD663A7820FE8DD8005E03FF /* CardGameCollectionViewCell.swift */,
-				FD663A7020FE8A72005E03FF /* NavigationController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -173,6 +183,33 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		FD663A9420FEC4F0005E03FF /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				FD663A9520FEC531005E03FF /* Interactor.swift */,
+				FD663A9720FEC5E4005E03FF /* URLConfig.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		FD663A9B20FED2AD005E03FF /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		FD663A9C20FED307005E03FF /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FD663A9D20FED3B3005E03FF /* PrimarySplitViewController.swift */,
+				FDD7D99620FE887900722BEB /* ViewController.swift */,
+				FD663A7020FE8A72005E03FF /* NavigationController.swift */,
+				FD663A9F20FED630005E03FF /* DetailViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		FDD7D98820FE887900722BEB = {
 			isa = PBXGroup;
 			children = (
@@ -196,6 +233,8 @@
 		FDD7D99320FE887900722BEB /* ironman */ = {
 			isa = PBXGroup;
 			children = (
+				FD663A9B20FED2AD005E03FF /* Presenter */,
+				FD663A9420FEC4F0005E03FF /* Network */,
 				FD663A8720FEC2C6005E03FF /* Models */,
 				FD663A8220FEBB8A005E03FF /* ConnectionStatus */,
 				FD663A8420FEBBA5005E03FF /* Views */,
@@ -408,12 +447,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				FDD7D99720FE887900722BEB /* ViewController.swift in Sources */,
+				FD663A9A20FECAE3005E03FF /* Bundle.swift in Sources */,
 				FD663A7320FE8ADA005E03FF /* Colors.swift in Sources */,
 				FD663A7F20FEAC4D005E03FF /* Notification.swift in Sources */,
 				FD663A9320FEC368005E03FF /* ImageLinks.swift in Sources */,
 				FD663A9120FEC30B005E03FF /* Game.swift in Sources */,
 				FD663A7B20FE9AE7005E03FF /* UIImageView.swift in Sources */,
+				FD663AA020FED630005E03FF /* DetailViewController.swift in Sources */,
 				FD663A8120FEB3A6005E03FF /* ConnectionStatusAlert.swift in Sources */,
+				FD663A9E20FED3B3005E03FF /* PrimarySplitViewController.swift in Sources */,
 				FD663A8D20FEC2F4005E03FF /* Links.swift in Sources */,
 				FD663A7120FE8A72005E03FF /* NavigationController.swift in Sources */,
 				FDD7D99520FE887900722BEB /* AppDelegate.swift in Sources */,
@@ -421,6 +463,8 @@
 				FD663A7920FE8DD8005E03FF /* CardGameCollectionViewCell.swift in Sources */,
 				FDD7D99D20FE887900722BEB /* ironman.xcdatamodeld in Sources */,
 				FD663A8920FEC2D0005E03FF /* GameList.swift in Sources */,
+				FD663A9620FEC531005E03FF /* Interactor.swift in Sources */,
+				FD663A9820FEC5E4005E03FF /* URLConfig.swift in Sources */,
 				FD663A7D20FE9F5F005E03FF /* ConnectionStatusManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -495,11 +539,13 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CLIENT_ID = xlvs8r8up6ng5jjwemqa5koh4btqxq;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENTRYPOINT = "https://api.twitch.tv/kraken/games/top";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -555,11 +601,13 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CLIENT_ID = xlvs8r8up6ng5jjwemqa5koh4btqxq;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENTRYPOINT = "https://api.twitch.tv/kraken/games/top";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;

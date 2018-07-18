@@ -22,10 +22,9 @@ class CardGameCollectionViewCell: UICollectionViewCell {
     imageView.clipsToBounds = true
   }
 
-  func setCell() {
-    titleLabel.text = "Counter-Strike: Global Offensive"
-    let url = URL(string: "https://images-na.ssl-images-amazon.com/images/I/81L8-mjNlrL._SX385_.jpg")!
-    imageView.setImageFrom(url: url) { [weak self] in
+  func setCell(top: Top?) {
+    titleLabel.text = top?.game.name
+    imageView.setImageFrom(url: top?.game.box.medium) { [weak self] in
       self?.titleLabel.textColor = UIColor.white
     }
   }
