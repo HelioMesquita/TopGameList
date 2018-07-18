@@ -5,10 +5,10 @@ class URLConfig {
   var url: URL
   var items: Array<URLQueryItem>
 
-  init(url: URL = Bundle.main.getEntrypoint(), name: String = "client_id", value: String = Bundle.main.getID()) {
+  init(url: URL, queryParams: [URLQueryItem]) {
     self.url = url
     self.items = URLComponents(url: self.url, resolvingAgainstBaseURL: false)!.queryItems ?? []
-    self.items.append(URLQueryItem(name: name, value: value))
+    self.items += queryParams
   }
 
   func toURLComponents() -> URLComponents {

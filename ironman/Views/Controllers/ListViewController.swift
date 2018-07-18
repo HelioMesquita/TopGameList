@@ -6,30 +6,20 @@ class ListViewController: UIViewController {
   
   private let margin: CGFloat = 16
   var gameList: GameList?
+  var presenter: ListPresenter?
+  let urlQueryParams = URLQueryItem(name: "client_id", value: Bundle.main.getID())
 
   override func viewDidLoad() {
     super.viewDidLoad()
     view.backgroundColor = UIColor.offwhite
-    setRefresher()
+    let urlConfig = URLConfig(url: Bundle.main.getEntrypoint(), queryParams: [urlQueryParams])
+    let interactor = Interactor<GameList>(urlConfig: urlConfig)
+    presenter = ListPresenter(interactor: interactor, delegate: self)
+    presenter?.present()
   }
 
-  func setRefresher() {
-    let refreshControl = UIRefreshControl()
-    refreshControl.tintColor = UIColor.philippineYellow
-    refreshControl.addTarget(self, action: #selector(load), for: .valueChanged)
-
-    collectionView.refreshControl = refreshControl
-    collectionView.alwaysBounceVertical = true
-  }
-
-  @objc func load() {
-    Interactor<GameList>(urlConfig: URLConfig()).execute(onSuccess: { (gameList) in
-      self.collectionView.refreshControl?.endRefreshing()
-      self.gameList = gameList
-      self.collectionView.reloadData()
-    }, onError: {
-      self.collectionView.refreshControl?.endRefreshing()
-    })
+  @objc func reload() {
+    presenter?.present()
   }
 
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -39,6 +29,50 @@ class ListViewController: UIViewController {
     let top = gameList?.top[row]
     viewController.top = top
     viewController.navigationItem.title = top?.game.name
+  }
+}
+
+extension ListViewController: ListPresentable {
+
+  func setRefresher() {
+    let refreshControl = UIRefreshControl()
+    refreshControl.tintColor = UIColor.philippineYellow
+    refreshControl.addTarget(self, action: #selector(reload), for: .valueChanged)
+
+    collectionView.refreshControl = refreshControl
+    collectionView.alwaysBounceVertical = true
+  }
+
+  func startLoading() {
+    collectionView.refreshControl?.beginRefreshing()
+  }
+
+  func endLoading() {
+    collectionView.refreshControl?.endRefreshing()
+  }
+
+  func onLoad(list: GameList) {
+    self.gameList = list
+    DispatchQueue.main.async {
+      self.collectionView.reloadData()
+    }
+  }
+
+  func onPaginate(list: GameList) {
+    self.gameList = gameList?.update(newlist: list)
+    DispatchQueue.main.async {
+      self.collectionView.reloadData()
+    }
+  }
+
+  func prepareToLoadNextPage(url: URL) {
+    let urlConfig = URLConfig(url: url, queryParams: [urlQueryParams])
+    let interactor = Interactor<GameList>(urlConfig: urlConfig)
+    presenter?.presentNextPage(interactor: interactor)
+  }
+
+  func onError() {
+
   }
 }
 
@@ -62,7 +96,7 @@ extension ListViewController: UICollectionViewDelegate, UICollectionViewDataSour
   }
 
   func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-    
+    presenter?.handleInfinitScroll(actualRow: indexPath.row, totalRows: gameList?.top.count, nextLink: gameList?.links?.next)
   }
 }
 

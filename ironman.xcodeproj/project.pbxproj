@@ -26,6 +26,7 @@
 		FD663A9A20FECAE3005E03FF /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD663A9920FECAE3005E03FF /* Bundle.swift */; };
 		FD663A9E20FED3B3005E03FF /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD663A9D20FED3B3005E03FF /* SplitViewController.swift */; };
 		FD663AA020FED630005E03FF /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD663A9F20FED630005E03FF /* DetailViewController.swift */; };
+		FD663AA220FFDA8A005E03FF /* ListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD663AA120FFDA8A005E03FF /* ListPresenter.swift */; };
 		FDD7D99520FE887900722BEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD7D99420FE887900722BEB /* AppDelegate.swift */; };
 		FDD7D99720FE887900722BEB /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD7D99620FE887900722BEB /* ListViewController.swift */; };
 		FDD7D99A20FE887900722BEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDD7D99820FE887900722BEB /* Main.storyboard */; };
@@ -69,6 +70,7 @@
 		FD663A9920FECAE3005E03FF /* Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
 		FD663A9D20FED3B3005E03FF /* SplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
 		FD663A9F20FED630005E03FF /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		FD663AA120FFDA8A005E03FF /* ListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPresenter.swift; sourceTree = "<group>"; };
 		FDD7D99120FE887900722BEB /* ironman.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ironman.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDD7D99420FE887900722BEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FDD7D99620FE887900722BEB /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 		FD663A9B20FED2AD005E03FF /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				FD663AA120FFDA8A005E03FF /* ListPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -453,6 +456,7 @@
 				FD663A9320FEC368005E03FF /* ImageLinks.swift in Sources */,
 				FD663A9120FEC30B005E03FF /* Game.swift in Sources */,
 				FD663A7B20FE9AE7005E03FF /* UIImageView.swift in Sources */,
+				FD663AA220FFDA8A005E03FF /* ListPresenter.swift in Sources */,
 				FD663AA020FED630005E03FF /* DetailViewController.swift in Sources */,
 				FD663A8120FEB3A6005E03FF /* ConnectionStatusAlert.swift in Sources */,
 				FD663A9E20FED3B3005E03FF /* SplitViewController.swift in Sources */,
