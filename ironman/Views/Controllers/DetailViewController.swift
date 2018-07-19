@@ -12,9 +12,10 @@ class DetailViewController: UIViewController, DetailPresentable {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    view.backgroundColor = UIColor.offwhite
+
+    view.backgroundColor = #colorLiteral(red: 0.9254901961, green: 0.937254902, blue: 0.9450980392, alpha: 1)
     noDetailsLabel.isHidden = false
-    noDetailsLabel.backgroundColor = UIColor.offwhite
+    noDetailsLabel.backgroundColor = #colorLiteral(red: 0.9254901961, green: 0.937254902, blue: 0.9450980392, alpha: 1)
     noDetailsLabel.text = "No details to show"
     DetailPresenter(game: game, delegate: self).present()
   }

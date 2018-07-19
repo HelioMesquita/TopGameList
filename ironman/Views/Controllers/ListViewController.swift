@@ -10,7 +10,7 @@ class ListViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    view.backgroundColor = UIColor.offwhite
+    view.backgroundColor = #colorLiteral(red: 0.9254901961, green: 0.937254902, blue: 0.9450980392, alpha: 1)
     let urlConfig = URLConfig(url: Bundle.main.getEntrypoint(), queryParams: [urlQueryParams])
     let interactor = Interactor<GameList>(urlConfig: urlConfig)
     let dataStore = GameDBDataStoreManager()
@@ -37,7 +37,7 @@ extension ListViewController: ListPresentable {
 
   func setRefresher() {
     let refreshControl = UIRefreshControl()
-    refreshControl.tintColor = UIColor.philippineYellow
+    refreshControl.tintColor = #colorLiteral(red: 0.9843137255, green: 0.7921568627, blue: 0.01176470588, alpha: 1)
     refreshControl.addTarget(self, action: #selector(reload), for: .valueChanged)
 
     collectionView.refreshControl = refreshControl

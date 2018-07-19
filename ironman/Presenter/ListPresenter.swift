@@ -40,8 +40,8 @@ class ListPresenter {
     })
   }
 
-  func handleInfinitScroll(actualRow: Int, totalRows: Int?, paginateCondition: Double = 0.7, nextLink: URL?) {
-    if let link = nextLink, let totalRows = totalRows, Double(actualRow) == Double(totalRows)*paginateCondition {
+  func handleInfinitScroll(actualRow: Int, totalRows: Int, nextLink: URL?) {
+    if let link = nextLink, actualRow == totalRows-3 {
       self.delegate.prepareToLoadNextPage(url: link)
     }
   }

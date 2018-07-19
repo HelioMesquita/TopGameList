@@ -129,30 +129,32 @@ class ListPresenterTest: QuickSpec {
     }
 
     describe("#handleInfinitScroll") {
-      context("with next link and row higher than 69% from total list") {
-        beforeEach {
-          subject.handleInfinitScroll(actualRow: 7, totalRows: 10, nextLink: link)
+      context("when will display row checking to be total of rows less 3") {
+        context("with next link and 7 of 10") {
+          beforeEach {
+            subject.handleInfinitScroll(actualRow: 7, totalRows: 10, nextLink: link)
+          }
+          it("returns true") {
+            expect(dummyViewController.preparedToLoad).to(beTrue())
+          }
         }
-        it("returns true") {
-          expect(dummyViewController.preparedToLoad).to(beTrue())
-        }
-      }
 
-      context("with next link and row lower than 69% from total list") {
-        beforeEach {
-          subject.handleInfinitScroll(actualRow: 6, totalRows: 10, nextLink: link)
+        context("with next link and 6 of 10") {
+          beforeEach {
+            subject.handleInfinitScroll(actualRow: 6, totalRows: 10, nextLink: link)
+          }
+          it("returns false") {
+            expect(dummyViewController.preparedToLoad).to(beFalse())
+          }
         }
-        it("returns false") {
-          expect(dummyViewController.preparedToLoad).to(beFalse())
-        }
-      }
 
-      context("without next link and row higher than 79% from total list") {
-        beforeEach {
-          subject.handleInfinitScroll(actualRow: 7, totalRows: 10, nextLink: nil)
-        }
-        it("returns false") {
-          expect(dummyViewController.preparedToLoad).to(beFalse())
+        context("without next link and 6 of 10") {
+          beforeEach {
+            subject.handleInfinitScroll(actualRow: 7, totalRows: 10, nextLink: nil)
+          }
+          it("returns false") {
+            expect(dummyViewController.preparedToLoad).to(beFalse())
+          }
         }
       }
     }

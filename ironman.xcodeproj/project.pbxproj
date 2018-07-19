@@ -10,7 +10,6 @@
 		3C19DC54B289D863051FAB5D /* Pods_ironmanTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A6477749FF6AD7A13459844 /* Pods_ironmanTests.framework */; };
 		6986BAA920717F36EB58A6CD /* Pods_ironman.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02BFBAFF673E21E626250BE0 /* Pods_ironman.framework */; };
 		FD663A7120FE8A72005E03FF /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD663A7020FE8A72005E03FF /* NavigationController.swift */; };
-		FD663A7320FE8ADA005E03FF /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD663A7220FE8ADA005E03FF /* Colors.swift */; };
 		FD663A7920FE8DD8005E03FF /* CardGameCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD663A7820FE8DD8005E03FF /* CardGameCollectionViewCell.swift */; };
 		FD663A7B20FE9AE7005E03FF /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD663A7A20FE9AE7005E03FF /* UIImageView.swift */; };
 		FD663A7D20FE9F5F005E03FF /* ConnectionStatusManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD663A7C20FE9F5F005E03FF /* ConnectionStatusManager.swift */; };
@@ -38,6 +37,7 @@
 		FD663ACA21001F1E005E03FF /* URLConfigTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD663AC921001EBE005E03FF /* URLConfigTest.swift */; };
 		FD663ACD2100243F005E03FF /* ListPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD663ACC2100243F005E03FF /* ListPresenterTest.swift */; };
 		FD663ACF21002D25005E03FF /* InteractorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD663ACE21002D25005E03FF /* InteractorTest.swift */; };
+		FD663AD12100BCA0005E03FF /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD663AD02100BCA0005E03FF /* Colors.xcassets */; };
 		FDD7D99520FE887900722BEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD7D99420FE887900722BEB /* AppDelegate.swift */; };
 		FDD7D99720FE887900722BEB /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD7D99620FE887900722BEB /* ListViewController.swift */; };
 		FDD7D99A20FE887900722BEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDD7D99820FE887900722BEB /* Main.storyboard */; };
@@ -65,7 +65,6 @@
 		B47D883B3E059A3D1AA07DA9 /* Pods-ironmanTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ironmanTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ironmanTests/Pods-ironmanTests.release.xcconfig"; sourceTree = "<group>"; };
 		DC1C98D654188F2E2F4FE3C3 /* Pods-ironmanTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ironmanTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ironmanTests/Pods-ironmanTests.debug.xcconfig"; sourceTree = "<group>"; };
 		FD663A7020FE8A72005E03FF /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
-		FD663A7220FE8ADA005E03FF /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		FD663A7820FE8DD8005E03FF /* CardGameCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardGameCollectionViewCell.swift; sourceTree = "<group>"; };
 		FD663A7A20FE9AE7005E03FF /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		FD663A7C20FE9F5F005E03FF /* ConnectionStatusManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionStatusManager.swift; sourceTree = "<group>"; };
@@ -93,6 +92,7 @@
 		FD663AC921001EBE005E03FF /* URLConfigTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLConfigTest.swift; sourceTree = "<group>"; };
 		FD663ACC2100243F005E03FF /* ListPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPresenterTest.swift; sourceTree = "<group>"; };
 		FD663ACE21002D25005E03FF /* InteractorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractorTest.swift; sourceTree = "<group>"; };
+		FD663AD02100BCA0005E03FF /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		FDD7D99120FE887900722BEB /* ironman.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ironman.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDD7D99420FE887900722BEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FDD7D99620FE887900722BEB /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
@@ -158,7 +158,6 @@
 		FD663A8320FEBBA0005E03FF /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				FD663A7220FE8ADA005E03FF /* Colors.swift */,
 				FD663A7A20FE9AE7005E03FF /* UIImageView.swift */,
 				FD663A7E20FEAC4D005E03FF /* Notification.swift */,
 				FD663A9920FECAE3005E03FF /* Bundle.swift */,
@@ -187,10 +186,11 @@
 		FD663A8620FEBBB2005E03FF /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				FDD7D99420FE887900722BEB /* AppDelegate.swift */,
 				FDD7D99E20FE887B00722BEB /* Assets.xcassets */,
+				FD663AD02100BCA0005E03FF /* Colors.xcassets */,
 				FDD7D9A320FE887B00722BEB /* Info.plist */,
 				FDD7D99B20FE887900722BEB /* ironman.xcdatamodeld */,
-				FDD7D99420FE887900722BEB /* AppDelegate.swift */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -266,13 +266,6 @@
 			path = Detail;
 			sourceTree = "<group>";
 		};
-		FD663AC421001C75005E03FF /* List */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = List;
-			sourceTree = "<group>";
-		};
 		FD663AC521001CB0005E03FF /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -340,7 +333,6 @@
 				FD663ACB21002416005E03FF /* List */,
 				FD663AC821001EB4005E03FF /* API */,
 				FD663AC521001CB0005E03FF /* Models */,
-				FD663AC421001C75005E03FF /* List */,
 				FD663AC121001B40005E03FF /* Detail */,
 				FDD7D9AE20FE887B00722BEB /* Info.plist */,
 			);
@@ -433,6 +425,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FDD7D9A220FE887B00722BEB /* LaunchScreen.storyboard in Resources */,
+				FD663AD12100BCA0005E03FF /* Colors.xcassets in Resources */,
 				FDD7D99F20FE887B00722BEB /* Assets.xcassets in Resources */,
 				FDD7D99A20FE887900722BEB /* Main.storyboard in Resources */,
 			);
@@ -542,7 +535,6 @@
 				FDD7D99720FE887900722BEB /* ListViewController.swift in Sources */,
 				FD663A9A20FECAE3005E03FF /* Bundle.swift in Sources */,
 				FD663ABE210012DD005E03FF /* DetailPresenter.swift in Sources */,
-				FD663A7320FE8ADA005E03FF /* Colors.swift in Sources */,
 				FD663A7F20FEAC4D005E03FF /* Notification.swift in Sources */,
 				FD663A9320FEC368005E03FF /* ImageLinks.swift in Sources */,
 				FD663ABB210008C5005E03FF /* GameDB+CoreDataClass.swift in Sources */,
@@ -650,7 +642,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENTRYPOINT = "https://api.twitch.tv/kraken/games/top";
+				ENTRYPOINT = "https://api.twitch.tv/kraken/games/top?limit=20";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -712,7 +704,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENTRYPOINT = "https://api.twitch.tv/kraken/games/top";
+				ENTRYPOINT = "https://api.twitch.tv/kraken/games/top?limit=20";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
