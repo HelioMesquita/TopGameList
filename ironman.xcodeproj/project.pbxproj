@@ -28,9 +28,10 @@
 		FD663AA020FED630005E03FF /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD663A9F20FED630005E03FF /* DetailViewController.swift */; };
 		FD663AA220FFDA8A005E03FF /* ListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD663AA120FFDA8A005E03FF /* ListPresenter.swift */; };
 		FD663AA620FFE694005E03FF /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD663AA520FFE694005E03FF /* RequestError.swift */; };
-		FD663AA820FFEBF5005E03FF /* GamesDataBaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD663AA720FFEBF5005E03FF /* GamesDataBaseManager.swift */; };
-		FD663AB420FFF608005E03FF /* GameItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD663AB220FFF608005E03FF /* GameItem+CoreDataClass.swift */; };
-		FD663AB520FFF608005E03FF /* GameItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD663AB320FFF608005E03FF /* GameItem+CoreDataProperties.swift */; };
+		FD663AA820FFEBF5005E03FF /* DataStoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD663AA720FFEBF5005E03FF /* DataStoreManager.swift */; };
+		FD663AB721000694005E03FF /* GameDBDataStoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD663AB621000694005E03FF /* GameDBDataStoreManager.swift */; };
+		FD663ABB210008C5005E03FF /* GameDB+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD663AB9210008C4005E03FF /* GameDB+CoreDataClass.swift */; };
+		FD663ABC210008C5005E03FF /* GameDB+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD663ABA210008C5005E03FF /* GameDB+CoreDataProperties.swift */; };
 		FDD7D99520FE887900722BEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD7D99420FE887900722BEB /* AppDelegate.swift */; };
 		FDD7D99720FE887900722BEB /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD7D99620FE887900722BEB /* ListViewController.swift */; };
 		FDD7D99A20FE887900722BEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDD7D99820FE887900722BEB /* Main.storyboard */; };
@@ -76,9 +77,10 @@
 		FD663A9F20FED630005E03FF /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		FD663AA120FFDA8A005E03FF /* ListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPresenter.swift; sourceTree = "<group>"; };
 		FD663AA520FFE694005E03FF /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
-		FD663AA720FFEBF5005E03FF /* GamesDataBaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesDataBaseManager.swift; sourceTree = "<group>"; };
-		FD663AB220FFF608005E03FF /* GameItem+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "GameItem+CoreDataClass.swift"; path = "/Users/heliomesquita/Desktop/TopGameList/ironman/API/DataBase/GameItem+CoreDataClass.swift"; sourceTree = "<absolute>"; };
-		FD663AB320FFF608005E03FF /* GameItem+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "GameItem+CoreDataProperties.swift"; path = "/Users/heliomesquita/Desktop/TopGameList/ironman/API/DataBase/GameItem+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
+		FD663AA720FFEBF5005E03FF /* DataStoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStoreManager.swift; sourceTree = "<group>"; };
+		FD663AB621000694005E03FF /* GameDBDataStoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDBDataStoreManager.swift; sourceTree = "<group>"; };
+		FD663AB9210008C4005E03FF /* GameDB+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GameDB+CoreDataClass.swift"; sourceTree = "<group>"; };
+		FD663ABA210008C5005E03FF /* GameDB+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GameDB+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		FDD7D99120FE887900722BEB /* ironman.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ironman.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDD7D99420FE887900722BEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FDD7D99620FE887900722BEB /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
@@ -197,7 +199,8 @@
 		FD663A9420FEC4F0005E03FF /* API */ = {
 			isa = PBXGroup;
 			children = (
-				FD663AB120FFEDC8005E03FF /* DataBase */,
+				FD663AB821000873005E03FF /* GameDB */,
+				FD663AB120FFEDC8005E03FF /* DataStore */,
 				FD663A9520FEC531005E03FF /* Interactor.swift */,
 				FD663A9720FEC5E4005E03FF /* URLConfig.swift */,
 			);
@@ -223,14 +226,22 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		FD663AB120FFEDC8005E03FF /* DataBase */ = {
+		FD663AB120FFEDC8005E03FF /* DataStore */ = {
 			isa = PBXGroup;
 			children = (
-				FD663AB220FFF608005E03FF /* GameItem+CoreDataClass.swift */,
-				FD663AB320FFF608005E03FF /* GameItem+CoreDataProperties.swift */,
-				FD663AA720FFEBF5005E03FF /* GamesDataBaseManager.swift */,
+				FD663AA720FFEBF5005E03FF /* DataStoreManager.swift */,
 			);
-			path = DataBase;
+			path = DataStore;
+			sourceTree = "<group>";
+		};
+		FD663AB821000873005E03FF /* GameDB */ = {
+			isa = PBXGroup;
+			children = (
+				FD663AB9210008C4005E03FF /* GameDB+CoreDataClass.swift */,
+				FD663ABA210008C5005E03FF /* GameDB+CoreDataProperties.swift */,
+				FD663AB621000694005E03FF /* GameDBDataStoreManager.swift */,
+			);
+			path = GameDB;
 			sourceTree = "<group>";
 		};
 		FDD7D98820FE887900722BEB = {
@@ -473,12 +484,11 @@
 				FD663A9A20FECAE3005E03FF /* Bundle.swift in Sources */,
 				FD663A7320FE8ADA005E03FF /* Colors.swift in Sources */,
 				FD663A7F20FEAC4D005E03FF /* Notification.swift in Sources */,
-				FD663AB420FFF608005E03FF /* GameItem+CoreDataClass.swift in Sources */,
 				FD663A9320FEC368005E03FF /* ImageLinks.swift in Sources */,
+				FD663ABB210008C5005E03FF /* GameDB+CoreDataClass.swift in Sources */,
 				FD663A9120FEC30B005E03FF /* GameInfo.swift in Sources */,
 				FD663A7B20FE9AE7005E03FF /* UIImageView.swift in Sources */,
 				FD663AA220FFDA8A005E03FF /* ListPresenter.swift in Sources */,
-				FD663AB520FFF608005E03FF /* GameItem+CoreDataProperties.swift in Sources */,
 				FD663AA020FED630005E03FF /* DetailViewController.swift in Sources */,
 				FD663A8120FEB3A6005E03FF /* ConnectionStatusAlert.swift in Sources */,
 				FD663A9E20FED3B3005E03FF /* SplitViewController.swift in Sources */,
@@ -489,11 +499,13 @@
 				FD663A7920FE8DD8005E03FF /* CardGameCollectionViewCell.swift in Sources */,
 				FDD7D99D20FE887900722BEB /* ironman.xcdatamodeld in Sources */,
 				FD663AA620FFE694005E03FF /* RequestError.swift in Sources */,
+				FD663AB721000694005E03FF /* GameDBDataStoreManager.swift in Sources */,
 				FD663A8920FEC2D0005E03FF /* GameList.swift in Sources */,
 				FD663A9620FEC531005E03FF /* Interactor.swift in Sources */,
 				FD663A9820FEC5E4005E03FF /* URLConfig.swift in Sources */,
+				FD663ABC210008C5005E03FF /* GameDB+CoreDataProperties.swift in Sources */,
 				FD663A7D20FE9F5F005E03FF /* ConnectionStatusManager.swift in Sources */,
-				FD663AA820FFEBF5005E03FF /* GamesDataBaseManager.swift in Sources */,
+				FD663AA820FFEBF5005E03FF /* DataStoreManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

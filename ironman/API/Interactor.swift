@@ -1,5 +1,4 @@
 import Alamofire
-import CoreData
 import Foundation
 
 class Interactor<S> where S: Decodable {
@@ -36,40 +35,5 @@ class Interactor<S> where S: Decodable {
         onError(error as! RequestError)
       }
     }
-  }
-
-  func saveGames(games: [Game]) {
-    for game in games {
-      let gameDB = GameItem(context: GamesDataBaseManager.context)
-      gameDB.channels = Int32(game.channels)
-      gameDB.imageLink = game.imageUrl.absoluteString
-      gameDB.viewers = Int32(game.viewers)
-      gameDB.name = game.name
-      GamesDataBaseManager.saveContext()
-    }
-  }
-
-  func clearGames() {
-    let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "GameItem")
-    let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
-    try! GamesDataBaseManager.context.execute(deleteRequest)
-  }
-
-  func retrieveGames() -> [Game] {
-    let fetchRequest: NSFetchRequest<GameItem> = GameItem.fetchRequest()
-    let gameDBList = try! GamesDataBaseManager.context.fetch(fetchRequest)
-
-    var games: [Game] = []
-
-    for gameDB in gameDBList {
-      let game = Game(viewers: Int(gameDB.viewers),
-                      channels: Int(gameDB.channels),
-                      imageUrl: URL(string: gameDB.imageLink!)!,
-                      name: gameDB.name!)
-
-      games.append(game)
-    }
-
-    return games
   }
 }

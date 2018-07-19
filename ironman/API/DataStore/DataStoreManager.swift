@@ -1,7 +1,6 @@
 import CoreData
-import Foundation
 
-class GamesDataBaseManager {
+class DataStoreManager {
 
   private init() {}
 

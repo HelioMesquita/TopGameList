@@ -13,13 +13,14 @@ class ListViewController: UIViewController {
     view.backgroundColor = UIColor.offwhite
     let urlConfig = URLConfig(url: Bundle.main.getEntrypoint(), queryParams: [urlQueryParams])
     let interactor = Interactor<GameList>(urlConfig: urlConfig)
-    presenter = ListPresenter(interactor: interactor, delegate: self)
+    let dataStore = GameDBDataStoreManager()
+    presenter = ListPresenter(interactor: interactor, delegate: self, dataStore: dataStore)
     presenter?.performLoadData()
-//    presenter?.performRequest()
+    presenter?.performRequest()
   }
 
   @objc func reload() {
-//    presenter?.performRequest()
+    presenter?.performRequest()
   }
 
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

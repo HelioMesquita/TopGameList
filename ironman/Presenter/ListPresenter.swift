@@ -13,24 +13,25 @@ protocol ListPresentable: class {
 class ListPresenter {
 
   let interactor: Interactor<GameList>
-  var delegate: ListPresentable
-  private var percentageOfInfinitScroll = 0.8
+  let dataStore: GameDBDataStoreManager
+  let delegate: ListPresentable
 
-  init(interactor: Interactor<GameList>, delegate: ListPresentable) {
+  init(interactor: Interactor<GameList>, delegate: ListPresentable, dataStore: GameDBDataStoreManager) {
     self.interactor = interactor
     self.delegate = delegate
+    self.dataStore = dataStore
     delegate.setRefresher()
   }
 
   func performLoadData() {
-    let games = interactor.retrieveGames()
+    let games = dataStore.retrieveGames()
     delegate.onLoad(list: GameList(links: nil, list: games))
   }
 
   func performRequest() {
     delegate.startLoading()
     interactor.execute(onSuccess: { gameList in
-      self.interactor.saveGames(games: gameList.list)
+      self.dataStore.saveGames(games: gameList.list)
       self.delegate.onLoad(list: gameList)
       self.delegate.endLoading()
     }, onError: { error in

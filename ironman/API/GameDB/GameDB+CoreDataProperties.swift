@@ -1,10 +1,10 @@
 import Foundation
 import CoreData
 
-extension GameItem {
+extension GameDB {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<GameItem> {
-        return NSFetchRequest<GameItem>(entityName: "GameItem")
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<GameDB> {
+        return NSFetchRequest<GameDB>(entityName: "GameDB")
     }
 
     @NSManaged public var name: String?
