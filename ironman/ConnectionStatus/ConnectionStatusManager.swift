@@ -37,4 +37,3 @@ class ConnectionStatusManager: NSObject {
     shared.reachability.stopNotifier()
   }
 }
-
