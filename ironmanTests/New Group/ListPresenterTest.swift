@@ -51,7 +51,7 @@ class ListPresenterTest: QuickSpec {
     var endedLoading = false
 
     func onLoad(list: GameList) { hasLoaded = true }
-    func onPaginate(list: GameList) { hasPaginated = true }
+    func onPaginate(newlist: GameList) { hasPaginated = true }
     func prepareToLoadNextPage(url: URL) { preparedToLoad = true }
     func onError(error: RequestError) { hasError = true }
     func setRefresher() { refresherSet = true }

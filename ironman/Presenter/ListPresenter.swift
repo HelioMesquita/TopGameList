@@ -2,7 +2,7 @@ import Foundation
 
 protocol ListPresentable: class {
   func onLoad(list: GameList)
-  func onPaginate(list: GameList)
+  func onPaginate(newlist: GameList)
   func prepareToLoadNextPage(url: URL)
   func onError(error: RequestError)
   func setRefresher()
@@ -49,7 +49,7 @@ class ListPresenter {
   func presentNextPage(nextInteractor: Interactor<GameList>?) {
     delegate.startLoading()
     nextInteractor?.execute(onSuccess: { gameList in
-      self.delegate.onPaginate(list: gameList)
+      self.delegate.onPaginate(newlist: gameList)
       self.delegate.endLoading()
     }, onError: { error in
       self.delegate.onError(error: error)
