@@ -60,22 +60,13 @@ extension ListViewController: ListPresentable {
   }
 
   func onPaginate(newlist: GameList) {
-
-//    self.gameList = gameList.update(newlist: newlist)
-
-    let test = Array(gameList.list.count...newlist.list.count+gameList.list.count-1)
-
-    let insertIndexPaths = test.map { IndexPath(item: $0, section: 0) }
-
+    let elements = Array(gameList.list.count...newlist.list.count+gameList.list.count-1)
     self.gameList = gameList.update(newlist: newlist)
+
     collectionView.performBatchUpdates({
+      let insertIndexPaths = elements.map { IndexPath(item: $0, section: 0) }
       collectionView.insertItems(at: insertIndexPaths)
     }, completion: nil)
-
-
-//    DispatchQueue.main.async {
-//      self.collectionView.reloadData()
-//    }
   }
 
   func prepareToLoadNextPage(url: URL) {
