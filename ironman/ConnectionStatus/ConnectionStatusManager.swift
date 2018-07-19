@@ -9,7 +9,6 @@ class ConnectionStatusManager: NSObject {
 
   override init() {
     super.init()
-
     reachability = Reachability()!
     NotificationCenter.default.addObserver(self, selector: #selector(networkStatusChanged(_:)), name: .reachabilityChanged, object: reachability)
     try! reachability.startNotifier()

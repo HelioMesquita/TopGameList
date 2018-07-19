@@ -12,7 +12,6 @@ class DetailViewController: UIViewController, DetailPresentable {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-
     view.backgroundColor = #colorLiteral(red: 0.9254901961, green: 0.937254902, blue: 0.9450980392, alpha: 1)
     noDetailsLabel.isHidden = false
     noDetailsLabel.backgroundColor = #colorLiteral(red: 0.9254901961, green: 0.937254902, blue: 0.9450980392, alpha: 1)
