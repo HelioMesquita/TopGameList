@@ -99,6 +99,7 @@ extension ListViewController: UICollectionViewDelegate, UICollectionViewDataSour
   }
 
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    UIImpactFeedbackGenerator(style: .light).impactOccurred()
     performSegue(withIdentifier: "showDetail", sender: indexPath.row)
   }
 
