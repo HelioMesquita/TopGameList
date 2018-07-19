@@ -37,6 +37,7 @@
 		FD663AC721001CC3005E03FF /* GameListTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD663AC621001CC3005E03FF /* GameListTest.swift */; };
 		FD663ACA21001F1E005E03FF /* URLConfigTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD663AC921001EBE005E03FF /* URLConfigTest.swift */; };
 		FD663ACD2100243F005E03FF /* ListPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD663ACC2100243F005E03FF /* ListPresenterTest.swift */; };
+		FD663ACF21002D25005E03FF /* InteractorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD663ACE21002D25005E03FF /* InteractorTest.swift */; };
 		FDD7D99520FE887900722BEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD7D99420FE887900722BEB /* AppDelegate.swift */; };
 		FDD7D99720FE887900722BEB /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD7D99620FE887900722BEB /* ListViewController.swift */; };
 		FDD7D99A20FE887900722BEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDD7D99820FE887900722BEB /* Main.storyboard */; };
@@ -91,6 +92,7 @@
 		FD663AC621001CC3005E03FF /* GameListTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameListTest.swift; sourceTree = "<group>"; };
 		FD663AC921001EBE005E03FF /* URLConfigTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLConfigTest.swift; sourceTree = "<group>"; };
 		FD663ACC2100243F005E03FF /* ListPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPresenterTest.swift; sourceTree = "<group>"; };
+		FD663ACE21002D25005E03FF /* InteractorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractorTest.swift; sourceTree = "<group>"; };
 		FDD7D99120FE887900722BEB /* ironman.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ironman.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDD7D99420FE887900722BEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FDD7D99620FE887900722BEB /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
@@ -283,6 +285,7 @@
 			isa = PBXGroup;
 			children = (
 				FD663AC921001EBE005E03FF /* URLConfigTest.swift */,
+				FD663ACE21002D25005E03FF /* InteractorTest.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -574,6 +577,7 @@
 				FD663AC021001560005E03FF /* DetailViewControllerTests.swift in Sources */,
 				FD663AC721001CC3005E03FF /* GameListTest.swift in Sources */,
 				FD663ACD2100243F005E03FF /* ListPresenterTest.swift in Sources */,
+				FD663ACF21002D25005E03FF /* InteractorTest.swift in Sources */,
 				FD663ACA21001F1E005E03FF /* URLConfigTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

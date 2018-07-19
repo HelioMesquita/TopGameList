@@ -18,21 +18,20 @@ class Interactor<S> where S: Decodable {
 
     Alamofire.request(urlConfig.toURLComponents()).responseJSON { (dataResponse) in
 
-      guard let data = dataResponse.data else {
-        onError(RequestError(error: "Missing Data", status: 0, message: "Try again later"))
-        return
-      }
-
-      do {
-        if let model = try? JSONDecoder().decode(Model.self, from: data) {
-          onSuccess(model)
-        } else if let error = try? JSONDecoder().decode(RequestError.self, from: data) {
-          onError(error)
-        } else {
-          throw RequestError(error: "Impossible to reach the error", status: 0, message: "Try again later")
+      if let data = dataResponse.data, dataResponse.result.isSuccess {
+        do {
+          if let model = try? JSONDecoder().decode(Model.self, from: data) {
+            onSuccess(model)
+          } else if let error = try? JSONDecoder().decode(RequestError.self, from: data) {
+            onError(error)
+          } else {
+            throw RequestError(error: "Impossible to reach the error", status: 0, message: "Try again later")
+          }
+        } catch {
+          onError(error as! RequestError)
         }
-      } catch {
-        onError(error as! RequestError)
+      } else {
+        onError(RequestError(error: "Missing Data", status: 0, message: "Try again later"))
       }
     }
   }
