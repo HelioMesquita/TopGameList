@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3C19DC54B289D863051FAB5D /* Pods_ironmanTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A6477749FF6AD7A13459844 /* Pods_ironmanTests.framework */; };
 		6986BAA920717F36EB58A6CD /* Pods_ironman.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02BFBAFF673E21E626250BE0 /* Pods_ironman.framework */; };
+		FD2FC01B210136EC001840FD /* GameImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2FC01A210136EC001840FD /* GameImageView.swift */; };
 		FD663A7120FE8A72005E03FF /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD663A7020FE8A72005E03FF /* NavigationController.swift */; };
 		FD663A7920FE8DD8005E03FF /* CardGameCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD663A7820FE8DD8005E03FF /* CardGameCollectionViewCell.swift */; };
 		FD663A7B20FE9AE7005E03FF /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD663A7A20FE9AE7005E03FF /* UIImageView.swift */; };
@@ -64,6 +65,7 @@
 		83B49FBAE6C047E0947CE2CF /* Pods-ironman.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ironman.release.xcconfig"; path = "Pods/Target Support Files/Pods-ironman/Pods-ironman.release.xcconfig"; sourceTree = "<group>"; };
 		B47D883B3E059A3D1AA07DA9 /* Pods-ironmanTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ironmanTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ironmanTests/Pods-ironmanTests.release.xcconfig"; sourceTree = "<group>"; };
 		DC1C98D654188F2E2F4FE3C3 /* Pods-ironmanTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ironmanTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ironmanTests/Pods-ironmanTests.debug.xcconfig"; sourceTree = "<group>"; };
+		FD2FC01A210136EC001840FD /* GameImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameImageView.swift; sourceTree = "<group>"; };
 		FD663A7020FE8A72005E03FF /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		FD663A7820FE8DD8005E03FF /* CardGameCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardGameCollectionViewCell.swift; sourceTree = "<group>"; };
 		FD663A7A20FE9AE7005E03FF /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
@@ -287,6 +289,7 @@
 			isa = PBXGroup;
 			children = (
 				FD663A7820FE8DD8005E03FF /* CardGameCollectionViewCell.swift */,
+				FD2FC01A210136EC001840FD /* GameImageView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -552,6 +555,7 @@
 				FDD7D99D20FE887900722BEB /* ironman.xcdatamodeld in Sources */,
 				FD663AA620FFE694005E03FF /* RequestError.swift in Sources */,
 				FD663AB721000694005E03FF /* GameDBDataStoreManager.swift in Sources */,
+				FD2FC01B210136EC001840FD /* GameImageView.swift in Sources */,
 				FD663A8920FEC2D0005E03FF /* GameList.swift in Sources */,
 				FD663A9620FEC531005E03FF /* Interactor.swift in Sources */,
 				FD663A9820FEC5E4005E03FF /* URLConfig.swift in Sources */,
