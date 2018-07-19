@@ -17,9 +17,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func applicationDidBecomeActive(_ application: UIApplication) {
     ConnectionStatusManager.start()
   }
-
-  func applicationWillTerminate(_ application: UIApplication) {
-    DataStoreManager.saveContext()
-  }
 }
-

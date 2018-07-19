@@ -35,6 +35,7 @@
 		FD663ABE210012DD005E03FF /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD663ABD210012DD005E03FF /* DetailPresenter.swift */; };
 		FD663AC021001560005E03FF /* DetailViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD663ABF21001560005E03FF /* DetailViewControllerTests.swift */; };
 		FD663AC721001CC3005E03FF /* GameListTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD663AC621001CC3005E03FF /* GameListTest.swift */; };
+		FD663ACA21001F1E005E03FF /* URLConfigTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD663AC921001EBE005E03FF /* URLConfigTest.swift */; };
 		FDD7D99520FE887900722BEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD7D99420FE887900722BEB /* AppDelegate.swift */; };
 		FDD7D99720FE887900722BEB /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD7D99620FE887900722BEB /* ListViewController.swift */; };
 		FDD7D99A20FE887900722BEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDD7D99820FE887900722BEB /* Main.storyboard */; };
@@ -87,6 +88,7 @@
 		FD663ABD210012DD005E03FF /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
 		FD663ABF21001560005E03FF /* DetailViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewControllerTests.swift; sourceTree = "<group>"; };
 		FD663AC621001CC3005E03FF /* GameListTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameListTest.swift; sourceTree = "<group>"; };
+		FD663AC921001EBE005E03FF /* URLConfigTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLConfigTest.swift; sourceTree = "<group>"; };
 		FDD7D99120FE887900722BEB /* ironman.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ironman.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDD7D99420FE887900722BEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FDD7D99620FE887900722BEB /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
@@ -275,6 +277,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		FD663AC821001EB4005E03FF /* API */ = {
+			isa = PBXGroup;
+			children = (
+				FD663AC921001EBE005E03FF /* URLConfigTest.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 		FDD7D98820FE887900722BEB = {
 			isa = PBXGroup;
 			children = (
@@ -313,6 +323,7 @@
 		FDD7D9AB20FE887B00722BEB /* ironmanTests */ = {
 			isa = PBXGroup;
 			children = (
+				FD663AC821001EB4005E03FF /* API */,
 				FD663AC521001CB0005E03FF /* Models */,
 				FD663AC421001C75005E03FF /* List */,
 				FD663AC121001B40005E03FF /* Detail */,
@@ -550,6 +561,7 @@
 				FDD7D9AD20FE887B00722BEB /* DetailPresenterTests.swift in Sources */,
 				FD663AC021001560005E03FF /* DetailViewControllerTests.swift in Sources */,
 				FD663AC721001CC3005E03FF /* GameListTest.swift in Sources */,
+				FD663ACA21001F1E005E03FF /* URLConfigTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
