@@ -92,7 +92,7 @@
         <!--Detail View Controller-->
         <scene sceneID="Cav-vb-SHj">
             <objects>
-                <viewController id="bxg-FF-fIv" customClass="DetailViewController" customModule="ironman" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="detailViewController" id="bxg-FF-fIv" customClass="DetailViewController" customModule="ironman" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="H5S-GV-kgW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

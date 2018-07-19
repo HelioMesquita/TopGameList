@@ -3,7 +3,7 @@ import UIKit
 extension UIColor {
 
   @nonobjc class var offwhite: UIColor {
-    return UIColor(red: 236.0 / 255.0, green: 239.0 / 255.0, blue: 241.0 / 255.0, alpha: 1.0)
+    return UIColor(red: 236 / 255.0, green: 239 / 255.0, blue: 241 / 255.0, alpha: 1.0)
   }
 
   @nonobjc class var darkCandyAppleRed: UIColor {

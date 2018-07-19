@@ -11,15 +11,13 @@ class CardGameCollectionViewCell: UICollectionViewCell {
     clipsToBounds = true
     layer.cornerRadius = 10
 
-    titleLabel.textColor = UIColor.black
+    titleLabel.textColor = UIColor.white
     imageView.layer.cornerRadius = 10
     imageView.clipsToBounds = true
   }
 
   func setCell(game: Game?) {
     titleLabel.text = game?.name
-    imageView.setImageFrom(url: game?.imageUrl) { [weak self] in
-      self?.titleLabel.textColor = UIColor.white
-    }
+    imageView.setImageFrom(url: game?.imageUrl)
   }
 }

@@ -1,6 +1,6 @@
 import UIKit
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController, DetailPresentable {
 
   @IBOutlet weak var imageView: UIImageView!
   @IBOutlet weak var nameLabel: UILabel!
@@ -13,20 +13,17 @@ class DetailViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     view.backgroundColor = UIColor.offwhite
-    setView()
+    noDetailsLabel.isHidden = false
+    noDetailsLabel.backgroundColor = UIColor.offwhite
+    noDetailsLabel.text = "No details to show"
+    DetailPresenter(game: game, delegate: self).present()
   }
 
-  func setView() {
-    if let game = game {
-      noDetailsLabel.isHidden = true
-      nameLabel.text = game.name
-      imageView.setImageFrom(url: game.imageUrl, onSuccess: {})
-      channelLabel.text = String(game.channels)
-      viewersLabel.text = String(game.viewers)
-    } else {
-      noDetailsLabel.isHidden = false
-      noDetailsLabel.backgroundColor = UIColor.offwhite
-      noDetailsLabel.text = "No details to show"
-    }
+  func showDetail(game: Game) {
+    noDetailsLabel.isHidden = true
+    nameLabel.text = game.name
+    imageView.setImageFrom(url: game.imageUrl)
+    channelLabel.text = String(game.channels)
+    viewersLabel.text = String(game.viewers)
   }
 }
