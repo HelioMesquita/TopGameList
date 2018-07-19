@@ -2,7 +2,7 @@ import UIKit
 
 class DetailViewController: UIViewController, DetailPresentable {
 
-  @IBOutlet weak var imageView: GameImageView!
+  @IBOutlet weak var imageView: UIImageView!
   @IBOutlet weak var nameLabel: UILabel!
   @IBOutlet weak var channelLabel: UILabel!
   @IBOutlet weak var viewersLabel: UILabel!

@@ -3,7 +3,7 @@ import UIKit
 class CardGameCollectionViewCell: UICollectionViewCell {
 
   @IBOutlet weak var titleLabel: UILabel!
-  @IBOutlet weak var imageView: GameImageView!
+  @IBOutlet weak var imageView: UIImageView!
 
   override func awakeFromNib() {
     super.awakeFromNib()
@@ -12,6 +12,8 @@ class CardGameCollectionViewCell: UICollectionViewCell {
     layer.cornerRadius = 10
 
     titleLabel.textColor = UIColor.white
+    imageView.layer.cornerRadius = 10
+    imageView.clipsToBounds = true
   }
 
   func setCell(game: Game?) {

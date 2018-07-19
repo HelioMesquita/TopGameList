@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "FDD7D99020FE887900722BEB"
-               BuildableName = "IronMan.app"
+               BuildableName = "ironman.app"
                BlueprintName = "ironman"
                ReferencedContainer = "container:ironman.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FDD7D99020FE887900722BEB"
-            BuildableName = "IronMan.app"
+            BuildableName = "ironman.app"
             BlueprintName = "ironman"
             ReferencedContainer = "container:ironman.xcodeproj">
          </BuildableReference>
@@ -54,7 +54,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FDD7D99020FE887900722BEB"
-            BuildableName = "IronMan.app"
+            BuildableName = "ironman.app"
             BlueprintName = "ironman"
             ReferencedContainer = "container:ironman.xcodeproj">
          </BuildableReference>
@@ -77,7 +77,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FDD7D99020FE887900722BEB"
-            BuildableName = "IronMan.app"
+            BuildableName = "ironman.app"
             BlueprintName = "ironman"
             ReferencedContainer = "container:ironman.xcodeproj">
          </BuildableReference>
@@ -96,7 +96,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FDD7D99020FE887900722BEB"
-            BuildableName = "IronMan.app"
+            BuildableName = "ironman.app"
             BlueprintName = "ironman"
             ReferencedContainer = "container:ironman.xcodeproj">
          </BuildableReference>
