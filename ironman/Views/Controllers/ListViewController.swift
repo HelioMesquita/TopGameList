@@ -77,6 +77,8 @@ extension ListViewController: ListPresentable {
 
   func onError(error: RequestError) {
     let alertController = UIAlertController(title: error.error, message: error.message, preferredStyle: .alert)
+    let alertAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+    alertController.addAction(alertAction)
     present(alertController, animated: true, completion: nil)
   }
 }
