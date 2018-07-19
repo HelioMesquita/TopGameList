@@ -38,6 +38,7 @@
 		FD663ACD2100243F005E03FF /* ListPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD663ACC2100243F005E03FF /* ListPresenterTest.swift */; };
 		FD663ACF21002D25005E03FF /* InteractorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD663ACE21002D25005E03FF /* InteractorTest.swift */; };
 		FD663AD12100BCA0005E03FF /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD663AD02100BCA0005E03FF /* Colors.xcassets */; };
+		FDD09F302101204B0095AFDE /* GameImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD09F2F2101204B0095AFDE /* GameImageView.swift */; };
 		FDD7D99520FE887900722BEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD7D99420FE887900722BEB /* AppDelegate.swift */; };
 		FDD7D99720FE887900722BEB /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD7D99620FE887900722BEB /* ListViewController.swift */; };
 		FDD7D99A20FE887900722BEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDD7D99820FE887900722BEB /* Main.storyboard */; };
@@ -93,7 +94,8 @@
 		FD663ACC2100243F005E03FF /* ListPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPresenterTest.swift; sourceTree = "<group>"; };
 		FD663ACE21002D25005E03FF /* InteractorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractorTest.swift; sourceTree = "<group>"; };
 		FD663AD02100BCA0005E03FF /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
-		FDD7D99120FE887900722BEB /* ironman.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ironman.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FDD09F2F2101204B0095AFDE /* GameImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameImageView.swift; sourceTree = "<group>"; };
+		FDD7D99120FE887900722BEB /* IronMan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IronMan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDD7D99420FE887900722BEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FDD7D99620FE887900722BEB /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		FDD7D99920FE887900722BEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -287,6 +289,7 @@
 			isa = PBXGroup;
 			children = (
 				FD663A7820FE8DD8005E03FF /* CardGameCollectionViewCell.swift */,
+				FDD09F2F2101204B0095AFDE /* GameImageView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -305,7 +308,7 @@
 		FDD7D99220FE887900722BEB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FDD7D99120FE887900722BEB /* ironman.app */,
+				FDD7D99120FE887900722BEB /* IronMan.app */,
 				FDD7D9A820FE887B00722BEB /* ironmanTests.xctest */,
 			);
 			name = Products;
@@ -358,7 +361,7 @@
 			);
 			name = ironman;
 			productName = ironman;
-			productReference = FDD7D99120FE887900722BEB /* ironman.app */;
+			productReference = FDD7D99120FE887900722BEB /* IronMan.app */;
 			productType = "com.apple.product-type.application";
 		};
 		FDD7D9A720FE887B00722BEB /* ironmanTests */ = {
@@ -552,6 +555,7 @@
 				FDD7D99D20FE887900722BEB /* ironman.xcdatamodeld in Sources */,
 				FD663AA620FFE694005E03FF /* RequestError.swift in Sources */,
 				FD663AB721000694005E03FF /* GameDBDataStoreManager.swift in Sources */,
+				FDD09F302101204B0095AFDE /* GameImageView.swift in Sources */,
 				FD663A8920FEC2D0005E03FF /* GameList.swift in Sources */,
 				FD663A9620FEC531005E03FF /* Interactor.swift in Sources */,
 				FD663A9820FEC5E4005E03FF /* URLConfig.swift in Sources */,
@@ -735,7 +739,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = callidus.ironman;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = IronMan;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -754,7 +758,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = callidus.ironman;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = IronMan;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

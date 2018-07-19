@@ -41,7 +41,7 @@ extension ListViewController: ListPresentable {
     collectionView.alwaysBounceVertical = true
 
     let refreshControl = UIRefreshControl()
-    refreshControl.tintColor = #colorLiteral(red: 0.9843137255, green: 0.7921568627, blue: 0.01176470588, alpha: 1)
+    refreshControl.tintColor = #colorLiteral(red: 0.4039215686, green: 0.7803921569, blue: 0.9215686275, alpha: 1)
     refreshControl.addTarget(self, action: #selector(load), for: .valueChanged)
 
     collectionView.refreshControl = refreshControl
