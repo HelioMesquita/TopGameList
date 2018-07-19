@@ -100,7 +100,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FgY-Iu-Bmt">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NQo-4s-lqP" customClass="GameImageView" customModule="ironman" customModuleProvider="target">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NQo-4s-lqP" customClass="GameImageView" customModule="ironman" customModuleProvider="target">
                                         <rect key="frame" x="20" y="20" width="335" height="435"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="435" id="C1S-7n-dQx"/>
