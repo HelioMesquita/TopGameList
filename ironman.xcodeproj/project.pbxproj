@@ -165,13 +165,15 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		FD663A8420FEBBA5005E03FF /* Views */ = {
+		FD663A8420FEBBA5005E03FF /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				FD663A9C20FED307005E03FF /* Controllers */,
-				FD663A7820FE8DD8005E03FF /* CardGameCollectionViewCell.swift */,
+				FD663A9D20FED3B3005E03FF /* SplitViewController.swift */,
+				FDD7D99620FE887900722BEB /* ListViewController.swift */,
+				FD663A7020FE8A72005E03FF /* NavigationController.swift */,
+				FD663A9F20FED630005E03FF /* DetailViewController.swift */,
 			);
-			path = Views;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		FD663A8520FEBBAB005E03FF /* Storyboard */ = {
@@ -228,17 +230,6 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
-		FD663A9C20FED307005E03FF /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				FD663A9D20FED3B3005E03FF /* SplitViewController.swift */,
-				FDD7D99620FE887900722BEB /* ListViewController.swift */,
-				FD663A7020FE8A72005E03FF /* NavigationController.swift */,
-				FD663A9F20FED630005E03FF /* DetailViewController.swift */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
 		FD663AB120FFEDC8005E03FF /* DataStore */ = {
 			isa = PBXGroup;
 			children = (
@@ -292,6 +283,14 @@
 			path = "New Group";
 			sourceTree = "<group>";
 		};
+		FDD09F2A210116780095AFDE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FD663A7820FE8DD8005E03FF /* CardGameCollectionViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		FDD7D98820FE887900722BEB = {
 			isa = PBXGroup;
 			children = (
@@ -315,11 +314,12 @@
 		FDD7D99320FE887900722BEB /* ironman */ = {
 			isa = PBXGroup;
 			children = (
+				FDD09F2A210116780095AFDE /* Views */,
 				FD663A9B20FED2AD005E03FF /* Presenter */,
 				FD663A9420FEC4F0005E03FF /* API */,
 				FD663A8720FEC2C6005E03FF /* Models */,
 				FD663A8220FEBB8A005E03FF /* ConnectionStatus */,
-				FD663A8420FEBBA5005E03FF /* Views */,
+				FD663A8420FEBBA5005E03FF /* Controllers */,
 				FD663A8520FEBBAB005E03FF /* Storyboard */,
 				FD663A8320FEBBA0005E03FF /* Helpers */,
 				FD663A8620FEBBB2005E03FF /* SupportingFiles */,

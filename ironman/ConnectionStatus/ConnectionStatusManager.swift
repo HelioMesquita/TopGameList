@@ -3,9 +3,9 @@ import Reachability
 
 class ConnectionStatusManager: NSObject {
 
-  var reachability: Reachability!
+  private var reachability: Reachability!
 
-  static let shared: ConnectionStatusManager = { return ConnectionStatusManager() }()
+  static let shared: ConnectionStatusManager = ConnectionStatusManager()
 
   override init() {
     super.init()
