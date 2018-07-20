@@ -5,15 +5,16 @@ import Nimble
 
 class ListPresenterTest: QuickSpec {
 
-  class DummyGameDB: GameDBDataStoreManager {
+  class DummyGameDB: GameDBDataStoreManagable {
 
+    var entityName: String = "test"
     var hasSaved = false
     var hasCleared = false
     var hasRetrived = false
 
-    override func saveGames(games: [Game]) { hasSaved = true }
-    override func clearGames() { hasCleared = true}
-    override func retrieveGames() -> [Game] {
+    func saveGames(games: [Game]) { hasSaved = true }
+    func clearGames() { hasCleared = true}
+    func retrieveGames() -> [Game] {
       hasRetrived = true
       return [Game(viewers: 0, channels: 0, imageUrl: URL(string: "www.google.com.br")!, name: "Iron Man")]
     }
@@ -49,6 +50,7 @@ class ListPresenterTest: QuickSpec {
     var refresherSet = false
     var statedLoading = false
     var endedLoading = false
+    var hasReloadedData = false
 
     func onLoad(list: GameList) { hasLoaded = true }
     func onPaginate(newList: GameList) { hasPaginated = true }
@@ -57,6 +59,7 @@ class ListPresenterTest: QuickSpec {
     func setRefresher() { refresherSet = true }
     func startLoading() { statedLoading = true }
     func endLoading() { endedLoading = true }
+    func reloadData() { hasReloadedData = true }
   }
 
   override func spec() {
@@ -94,6 +97,9 @@ class ListPresenterTest: QuickSpec {
           expect(dummyViewController.hasLoaded).to(beTrue())
         }
         it("returns true") {
+          expect(dummyViewController.hasReloadedData).to(beTrue())
+        }
+        it("returns true") {
           expect(dummyViewController.statedLoading).to(beTrue())
         }
         it("returns true") {
@@ -108,6 +114,12 @@ class ListPresenterTest: QuickSpec {
         }
         it("returns true") {
           expect(dummyViewController.hasError).to(beTrue())
+        }
+        it("returns false") {
+          expect(dummyViewController.hasReloadedData).to(beFalse())
+        }
+        it("returns false") {
+          expect(dummyViewController.hasReloadedData).to(beFalse())
         }
         it("returns true") {
           expect(dummyViewController.statedLoading).to(beTrue())
@@ -131,19 +143,23 @@ class ListPresenterTest: QuickSpec {
 
     describe("#performLoadData") {
       context("when get storage data") {
-        it("returns true") {
+        beforeEach {
           subject.performLoadData()
-
+        }
+        it("returns true") {
           expect(dummyViewController.hasLoaded).to(beTrue())
+        }
+        it("returns false") {
+          expect(dummyViewController.hasReloadedData).to(beFalse())
         }
       }
     }
 
     describe("#handleInfinitScroll") {
-      context("when will display row checking to be total of rows less 3") {
-        context("with next link and 7 of 10") {
+      context("when will display a new row, check it to be total of rows less 5") {
+        context("with next link and 5 of 10") {
           beforeEach {
-            subject.handleInfinitScroll(currentRow: 7, totalRows: 10, nextLink: link)
+            subject.handleInfinitScroll(currentRow: 5, totalRows: 10, nextLink: link)
           }
           it("returns true") {
             expect(dummyViewController.preparedToLoad).to(beTrue())
@@ -179,11 +195,11 @@ class ListPresenterTest: QuickSpec {
         it("returns true") {
           expect(dummyViewController.hasPaginated).to(beTrue())
         }
-        it("returns true") {
-          expect(dummyViewController.statedLoading).to(beTrue())
+        it("returns false") {
+          expect(dummyViewController.statedLoading).to(beFalse())
         }
-        it("returns true") {
-          expect(dummyViewController.endedLoading).to(beTrue())
+        it("returns false") {
+          expect(dummyViewController.endedLoading).to(beFalse())
         }
       }
 
@@ -192,11 +208,11 @@ class ListPresenterTest: QuickSpec {
           interactor.isAPIResponseSuccess = false
           subject.presentNextPage(nextInteractor: interactor)
         }
-        it("returns true") {
-          expect(dummyViewController.statedLoading).to(beTrue())
+        it("returns false") {
+          expect(dummyViewController.statedLoading).to(beFalse())
         }
-        it("returns true") {
-          expect(dummyViewController.endedLoading).to(beTrue())
+        it("returns false") {
+          expect(dummyViewController.endedLoading).to(beFalse())
         }
         it("returns true") {
           expect(dummyViewController.hasError).to(beTrue())

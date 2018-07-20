@@ -2,6 +2,7 @@ import Foundation
 
 protocol ListPresentable: class {
   func onLoad(list: GameList)
+  func reloadData()
   func onPaginate(newList: GameList)
   func prepareToLoadNextPage(url: URL)
   func onError(error: RequestError)
@@ -13,10 +14,10 @@ protocol ListPresentable: class {
 class ListPresenter {
 
   let interactor: Interactor<GameList>
-  let dataStore: GameDBDataStoreManager
+  let dataStore: GameDBDataStoreManagable
   let delegate: ListPresentable
 
-  init(interactor: Interactor<GameList>, delegate: ListPresentable, dataStore: GameDBDataStoreManager) {
+  init(interactor: Interactor<GameList>, delegate: ListPresentable, dataStore: GameDBDataStoreManagable) {
     self.interactor = interactor
     self.delegate = delegate
     self.dataStore = dataStore
@@ -24,7 +25,6 @@ class ListPresenter {
   }
 
   func performLoadData() {
-    delegate.startLoading()
     let games = dataStore.retrieveGames()
     delegate.onLoad(list: GameList(links: nil, list: games))
   }
@@ -34,27 +34,25 @@ class ListPresenter {
     interactor.execute(onSuccess: { gameList in
       self.dataStore.saveGames(games: gameList.list)
       self.delegate.onLoad(list: gameList)
+      self.delegate.reloadData()
       self.delegate.endLoading()
     }, onError: { error in
-      self.delegate.onError(error: error)
       self.delegate.endLoading()
+      self.delegate.onError(error: error)
     })
   }
 
   func handleInfinitScroll(currentRow: Int, totalRows: Int, nextLink: URL?) {
-    if let link = nextLink, currentRow == totalRows-3 {
+    if let link = nextLink, currentRow == totalRows-5 {
       self.delegate.prepareToLoadNextPage(url: link)
     }
   }
 
   func presentNextPage(nextInteractor: Interactor<GameList>?) {
-    delegate.startLoading()
     nextInteractor?.execute(onSuccess: { gameList in
       self.delegate.onPaginate(newList: gameList)
-      self.delegate.endLoading()
     }, onError: { error in
       self.delegate.onError(error: error)
-      self.delegate.endLoading()
     })
   }
 

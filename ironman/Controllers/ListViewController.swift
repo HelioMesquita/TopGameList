@@ -57,6 +57,9 @@ extension ListViewController: ListPresentable {
 
   func onLoad(list: GameList) {
     self.gameList = list
+  }
+
+  func reloadData() {
     DispatchQueue.main.async {
       self.collectionView.reloadData()
     }

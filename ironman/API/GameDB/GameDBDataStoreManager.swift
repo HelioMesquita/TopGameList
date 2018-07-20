@@ -1,8 +1,16 @@
 import CoreData
 
-class GameDBDataStoreManager {
+protocol GameDBDataStoreManagable {
+  var entityName: String { get set }
 
-  let entityName: String = "GameDB"
+  func saveGames(games: [Game])
+  func clearGames()
+  func retrieveGames() -> [Game]
+}
+
+class GameDBDataStoreManager: GameDBDataStoreManagable {
+
+  var entityName: String = "GameDB"
 
   func saveGames(games: [Game]) {
     clearGames()

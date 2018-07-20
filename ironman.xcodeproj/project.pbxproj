@@ -170,6 +170,7 @@
 		FD663A8420FEBBA5005E03FF /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				FDD7D99420FE887900722BEB /* AppDelegate.swift */,
 				FD663A9D20FED3B3005E03FF /* SplitViewController.swift */,
 				FDD7D99620FE887900722BEB /* ListViewController.swift */,
 				FD663A7020FE8A72005E03FF /* NavigationController.swift */,
@@ -190,7 +191,6 @@
 		FD663A8620FEBBB2005E03FF /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
-				FDD7D99420FE887900722BEB /* AppDelegate.swift */,
 				FDD7D99E20FE887B00722BEB /* Assets.xcassets */,
 				FD663AD02100BCA0005E03FF /* Colors.xcassets */,
 				FDD7D9A320FE887B00722BEB /* Info.plist */,
