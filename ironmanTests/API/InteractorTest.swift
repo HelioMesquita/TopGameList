@@ -88,6 +88,22 @@ class InteractorTests: QuickSpec {
             expect(requestError?.error).toEventually(equal("Missing Data"), timeout: 5.5, pollInterval: 0.5)
           }
         }
+        context("no internet") {
+          beforeEach {
+            subject = Interactor<DummyModel>(urlConfig: urlConfig, hasConnection: false)
+            self.stub(everything, http(200))
+          }
+          it("returns a fail message") {
+            subject.execute(onSuccess: { result in
+              XCTFail()
+            }, onError: { error in
+              requestError = error
+            })
+            expect(requestError?.message).toEventually(equal("Please, check network connection"), timeout: 5.5, pollInterval: 0.5)
+            expect(requestError?.status).toEventually(equal(0), timeout: 5.5, pollInterval: 0.5)
+            expect(requestError?.error).toEventually(equal("No Connection"), timeout: 5.5, pollInterval: 0.5)
+          }
+        }
       }
     }
   }
