@@ -39,7 +39,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="154" height="148"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TKW-Eo-PMr">
-                                                    <rect key="frame" x="6" y="142" width="142" height="0.0"/>
+                                                    <rect key="frame" x="10" y="138" width="134" height="0.0"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -50,11 +50,11 @@
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="BP6-R4-JKF" secondAttribute="bottom" id="CHi-6M-Qcr"/>
                                             <constraint firstAttribute="trailing" secondItem="BP6-R4-JKF" secondAttribute="trailing" id="CWq-Go-A4c"/>
-                                            <constraint firstAttribute="trailing" secondItem="TKW-Eo-PMr" secondAttribute="trailing" constant="6" id="EM3-Ch-azc"/>
+                                            <constraint firstAttribute="trailing" secondItem="TKW-Eo-PMr" secondAttribute="trailing" constant="10" id="EM3-Ch-azc"/>
                                             <constraint firstItem="BP6-R4-JKF" firstAttribute="leading" secondItem="wWQ-B7-Iai" secondAttribute="leading" id="XYW-4a-eyZ"/>
-                                            <constraint firstItem="TKW-Eo-PMr" firstAttribute="leading" secondItem="wWQ-B7-Iai" secondAttribute="leading" constant="6" id="ciq-Dn-5Y8"/>
+                                            <constraint firstItem="TKW-Eo-PMr" firstAttribute="leading" secondItem="wWQ-B7-Iai" secondAttribute="leading" constant="10" id="ciq-Dn-5Y8"/>
                                             <constraint firstItem="BP6-R4-JKF" firstAttribute="top" secondItem="wWQ-B7-Iai" secondAttribute="top" id="twu-FP-44z"/>
-                                            <constraint firstAttribute="bottom" secondItem="TKW-Eo-PMr" secondAttribute="bottom" constant="6" id="zIK-6U-pV2"/>
+                                            <constraint firstAttribute="bottom" secondItem="TKW-Eo-PMr" secondAttribute="bottom" constant="10" id="zIK-6U-pV2"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="imageView" destination="BP6-R4-JKF" id="5xp-J0-RJp"/>
@@ -106,7 +106,7 @@
                                             <constraint firstAttribute="height" constant="435" id="C1S-7n-dQx"/>
                                         </constraints>
                                     </imageView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="edV-Sv-yfF">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="edV-Sv-yfF">
                                         <rect key="frame" x="20" y="471" width="335" height="120"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="zCy-kD-crA">
