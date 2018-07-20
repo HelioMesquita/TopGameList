@@ -2,7 +2,7 @@ import Foundation
 
 protocol ListPresentable: class {
   func onLoad(list: GameList)
-  func onPaginate(newlist: GameList)
+  func onPaginate(newList: GameList)
   func prepareToLoadNextPage(url: URL)
   func onError(error: RequestError)
   func setRefresher()
@@ -41,8 +41,8 @@ class ListPresenter {
     })
   }
 
-  func handleInfinitScroll(actualRow: Int, totalRows: Int, nextLink: URL?) {
-    if let link = nextLink, actualRow == totalRows-3 {
+  func handleInfinitScroll(currentRow: Int, totalRows: Int, nextLink: URL?) {
+    if let link = nextLink, currentRow == totalRows-3 {
       self.delegate.prepareToLoadNextPage(url: link)
     }
   }
@@ -50,11 +50,16 @@ class ListPresenter {
   func presentNextPage(nextInteractor: Interactor<GameList>?) {
     delegate.startLoading()
     nextInteractor?.execute(onSuccess: { gameList in
-      self.delegate.onPaginate(newlist: gameList)
+      self.delegate.onPaginate(newList: gameList)
       self.delegate.endLoading()
     }, onError: { error in
       self.delegate.onError(error: error)
       self.delegate.endLoading()
     })
+  }
+
+  func handlePaginate(currentList: [Game], newList: [Game], section: Int) -> [IndexPath] {
+    let elements = Array(currentList.count...newList.count+currentList.count-1)
+    return elements.map { IndexPath(item: $0, section: 0) }
   }
 }

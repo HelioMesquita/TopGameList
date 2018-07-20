@@ -18,9 +18,9 @@ class ConnectionStatusManager: NSObject {
     let reachability = notification.object as! Reachability
     switch reachability.connection {
     case .cellular, .wifi:
-      ConnectionStatusAlert.hide()
+      ConnectionStatusAlert().hide()
     case .none:
-      ConnectionStatusAlert.show()
+      ConnectionStatusAlert().show()
     }
   }
 

@@ -62,13 +62,12 @@ extension ListViewController: ListPresentable {
     }
   }
 
-  func onPaginate(newlist: GameList) {
-    let elements = Array(gameList.list.count...newlist.list.count+gameList.list.count-1)
-    self.gameList = gameList.update(newlist: newlist)
+  func onPaginate(newList: GameList) {
+    let insertIndexPaths = presenter?.handlePaginate(currentList: gameList.list, newList: newList.list, section: 0)
+    self.gameList = gameList.update(newlist: newList)
 
     collectionView.performBatchUpdates({
-      let insertIndexPaths = elements.map { IndexPath(item: $0, section: 0) }
-      collectionView.insertItems(at: insertIndexPaths)
+      collectionView.insertItems(at: insertIndexPaths!)
     }, completion: nil)
   }
 
@@ -104,7 +103,7 @@ extension ListViewController: UICollectionViewDelegate, UICollectionViewDataSour
   }
 
   func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-    presenter?.handleInfinitScroll(actualRow: indexPath.row, totalRows: gameList.list.count, nextLink: gameList.links?.next)
+    presenter?.handleInfinitScroll(currentRow: indexPath.row, totalRows: gameList.list.count, nextLink: gameList.links?.next)
   }
 }
 

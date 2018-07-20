@@ -51,7 +51,7 @@ class ListPresenterTest: QuickSpec {
     var endedLoading = false
 
     func onLoad(list: GameList) { hasLoaded = true }
-    func onPaginate(newlist: GameList) { hasPaginated = true }
+    func onPaginate(newList: GameList) { hasPaginated = true }
     func prepareToLoadNextPage(url: URL) { preparedToLoad = true }
     func onError(error: RequestError) { hasError = true }
     func setRefresher() { refresherSet = true }
@@ -118,8 +118,19 @@ class ListPresenterTest: QuickSpec {
       }
     }
 
+    describe("#handlePaginate") {
+      context("when insert new rows in collection view, get the indexpath of new rows") {
+        it("returns indexpath") {
+          let game  = Game(viewers: 0, channels: 0, imageUrl: URL(string: "www.google.com.br")!, name: "Iron Man")
+          let value = subject.handlePaginate(currentList: [game], newList: [game, game], section: 0)
+
+          expect(value.count).to(equal(2))
+        }
+      }
+    }
+
     describe("#performLoadData") {
-      context("returns games in core data") {
+      context("when get storage data") {
         it("returns true") {
           subject.performLoadData()
 
@@ -132,7 +143,7 @@ class ListPresenterTest: QuickSpec {
       context("when will display row checking to be total of rows less 3") {
         context("with next link and 7 of 10") {
           beforeEach {
-            subject.handleInfinitScroll(actualRow: 7, totalRows: 10, nextLink: link)
+            subject.handleInfinitScroll(currentRow: 7, totalRows: 10, nextLink: link)
           }
           it("returns true") {
             expect(dummyViewController.preparedToLoad).to(beTrue())
@@ -141,7 +152,7 @@ class ListPresenterTest: QuickSpec {
 
         context("with next link and 6 of 10") {
           beforeEach {
-            subject.handleInfinitScroll(actualRow: 6, totalRows: 10, nextLink: link)
+            subject.handleInfinitScroll(currentRow: 6, totalRows: 10, nextLink: link)
           }
           it("returns false") {
             expect(dummyViewController.preparedToLoad).to(beFalse())
@@ -150,7 +161,7 @@ class ListPresenterTest: QuickSpec {
 
         context("without next link and 6 of 10") {
           beforeEach {
-            subject.handleInfinitScroll(actualRow: 7, totalRows: 10, nextLink: nil)
+            subject.handleInfinitScroll(currentRow: 7, totalRows: 10, nextLink: nil)
           }
           it("returns false") {
             expect(dummyViewController.preparedToLoad).to(beFalse())
