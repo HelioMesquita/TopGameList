@@ -4,15 +4,13 @@ import Foundation
 class Interactor<S> where S: Decodable {
   typealias Model = S
 
-  var urlConfig: URLConfig
-  var hasConnection: Bool
+  let urlConfig: URLConfig
 
-  init(urlConfig: URLConfig, hasConnection: Bool = ConnectionStatusManager.hasConnection()) {
+  init(urlConfig: URLConfig) {
     self.urlConfig = urlConfig
-    self.hasConnection = hasConnection
   }
 
-  func execute(onSuccess: @escaping (Model) -> Void, onError: @escaping (RequestError) -> Void) {
+  func execute(hasConnection: Bool = ConnectionStatusManager.hasConnection(), onSuccess: @escaping (Model) -> Void, onError: @escaping (RequestError) -> Void) {
     if !hasConnection {
       onError(RequestError(error: "No Connection", status: 0, message: "Please, check network connection"))
       return

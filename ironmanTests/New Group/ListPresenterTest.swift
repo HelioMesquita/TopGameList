@@ -32,7 +32,7 @@ class ListPresenterTest: QuickSpec {
       super.init(urlConfig: urlConfig)
     }
 
-    override func execute(onSuccess: @escaping (S) -> Void, onError: @escaping (RequestError) -> Void) {
+    override func execute(hasConnection: Bool, onSuccess: @escaping (S) -> Void, onError: @escaping (RequestError) -> Void) {
       if isAPIResponseSuccess {
         onSuccess(successModel)
       } else {

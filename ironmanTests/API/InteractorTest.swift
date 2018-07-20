@@ -90,11 +90,10 @@ class InteractorTests: QuickSpec {
         }
         context("no internet") {
           beforeEach {
-            subject = Interactor<DummyModel>(urlConfig: urlConfig, hasConnection: false)
             self.stub(everything, http(200))
           }
           it("returns a fail message") {
-            subject.execute(onSuccess: { result in
+            subject.execute(hasConnection: false, onSuccess: { result in
               XCTFail()
             }, onError: { error in
               requestError = error
