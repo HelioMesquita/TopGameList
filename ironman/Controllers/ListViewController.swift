@@ -6,12 +6,13 @@ class ListViewController: UIViewController {
   
   var gameList = GameList()
   var presenter: ListPresenter?
-  let urlQueryParams = URLQueryItem(name: "client_id", value: Bundle.main.getID())
+  let clientQuery = URLQueryItem(name: "client_id", value: Bundle.main.getID())
 
   override func viewDidLoad() {
     super.viewDidLoad()
     view.backgroundColor = #colorLiteral(red: 0.9254901961, green: 0.937254902, blue: 0.9450980392, alpha: 1)
-    let urlConfig = URLConfig(url: Bundle.main.getEntrypoint(), queryParams: [urlQueryParams])
+    let limitQuery = URLQueryItem(name: "limit", value: "20")
+    let urlConfig = URLConfig(url: Bundle.main.getEntrypoint(), queryParams: [clientQuery, limitQuery])
     let interactor = Interactor<GameList>(urlConfig: urlConfig)
     let dataStore = GameDBDataStoreManager()
     presenter = ListPresenter(interactor: interactor, delegate: self, dataStore: dataStore)
@@ -75,7 +76,7 @@ extension ListViewController: ListPresentable {
   }
 
   func prepareToLoadNextPage(url: URL) {
-    let urlConfig = URLConfig(url: url, queryParams: [urlQueryParams])
+    let urlConfig = URLConfig(url: url, queryParams: [clientQuery])
     let interactor = Interactor<GameList>(urlConfig: urlConfig)
     presenter?.presentNextPage(nextInteractor: interactor)
   }
