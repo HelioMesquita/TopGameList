@@ -24,6 +24,7 @@ class ListPresenter {
   }
 
   func performLoadData() {
+    delegate.startLoading()
     let games = dataStore.retrieveGames()
     delegate.onLoad(list: GameList(links: nil, list: games))
   }
